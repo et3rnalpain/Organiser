@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
         model->setTable("flowers");
         model->select();
         this->ui->info->setModel(model);
+        model->
     }
 }
 
