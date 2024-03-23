@@ -963,7 +963,7 @@ padding-top: 1px;
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page">
+         <widget class="QWidget" name="page_sklad">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QPushButton" name="pushButton_2">
