@@ -35,426 +35,126 @@
    <enum>QTabWidget::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1200</width>
+     <height>1000</height>
+    </size>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(250, 250, 255);</string>
    </property>
-   <widget class="QWidget" name="iconmenu" native="true">
-    <property name="geometry">
-     <rect>
-      <x>-1</x>
-      <y>-7</y>
-      <width>38</width>
-      <height>607</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16777215</width>
-      <height>2000</height>
-     </size>
-    </property>
-    <property name="toolTipDuration">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
      <number>0</number>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #30343f;</string>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetFixedSize</enum>
     </property>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>1</x>
-       <y>1</y>
-       <width>39</width>
-       <height>203</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="spacing">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="iconmenu" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>36</width>
+        <height>610</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>36</width>
+        <height>2000</height>
+       </size>
+      </property>
+      <property name="toolTipDuration">
        <number>0</number>
       </property>
-      <property name="topMargin">
-       <number>4</number>
+      <property name="styleSheet">
+       <string notr="true">background-color: #30343f;</string>
       </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QPushButton" name="openmenu">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="icon.qrc">
-          <normaloff>:/new/icon/icons/menu.png</normaloff>
-          <normalon>:/new/icon/icons/menu2.png</normalon>:/new/icon/icons/menu.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="inventory_2">
-        <property name="minimumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="icon.qrc">
-          <normaloff>:/new/icon/icons/sklad.png</normaloff>
-          <normalon>:/new/icon/icons/sklad2.png</normalon>:/new/icon/icons/sklad.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="flowers_2">
-        <property name="minimumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="icon.qrc">
-          <normaloff>:/new/icon/icons/flowers.png</normaloff>
-          <normalon>:/new/icon/icons/flowers2.png</normalon>:/new/icon/icons/flowers.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="clients_2">
-        <property name="minimumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="icon.qrc">
-          <normaloff>:/new/icon/icons/clients.png</normaloff>
-          <normalon>:/new/icon/icons/clients2.png</normalon>:/new/icon/icons/clients.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="stats_2">
-        <property name="minimumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>37</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="icon.qrc">
-          <normaloff>:/new/icon/icons/stats.png</normaloff>
-          <normalon>:/new/icon/icons/stats2.png</normalon>:/new/icon/icons/stats.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="fullmenu" native="true">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>-1</x>
-      <y>-7</y>
-      <width>141</width>
-      <height>607</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16777215</width>
-      <height>2000</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #30343f;</string>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <property name="spacing">
-      <number>0</number>
-     </property>
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>1</number>
-     </property>
-     <property name="rightMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
        <property name="spacing">
         <number>0</number>
        </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
        <property name="topMargin">
-        <number>6</number>
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
-        <widget class="QPushButton" name="closemenu">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>170</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Bahnschrift</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="openmenu">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>37</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
 QPushButton
 {
 float: left;
@@ -472,337 +172,806 @@ color:#30343f;
 
 
 </string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icon.qrc">
+               <normaloff>:/new/icon/icons/menu.png</normaloff>
+               <normalon>:/new/icon/icons/menu2.png</normalon>:/new/icon/icons/menu.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="inventory_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>37</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icon.qrc">
+               <normaloff>:/new/icon/icons/sklad.png</normaloff>
+               <normalon>:/new/icon/icons/sklad2.png</normalon>:/new/icon/icons/sklad.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="flowers_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>37</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icon.qrc">
+               <normaloff>:/new/icon/icons/flowers.png</normaloff>
+               <normalon>:/new/icon/icons/flowers2.png</normalon>:/new/icon/icons/flowers.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="clients_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>37</width>
+               <height>37</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icon.qrc">
+               <normaloff>:/new/icon/icons/clients.png</normaloff>
+               <normalon>:/new/icon/icons/clients2.png</normalon>:/new/icon/icons/clients.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="stats_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>37</width>
+               <height>36</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>37</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icon.qrc">
+               <normaloff>:/new/icon/icons/stats.png</normaloff>
+               <normalon>:/new/icon/icons/stats2.png</normalon>:/new/icon/icons/stats.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>388</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="fullmenu" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>630</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>2000</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #30343f;
+text-align: left;
+padding-left: 6px;
+
+</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
          </property>
-         <property name="text">
-          <string>Закрыть меню</string>
+         <property name="topMargin">
+          <number>0</number>
          </property>
-         <property name="icon">
-          <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/omenu.png</normaloff>
-           <normalon>:/new/icon/icons/omenu2.png</normalon>:/new/icon/icons/omenu.png</iconset>
+         <property name="bottomMargin">
+          <number>0</number>
          </property>
-         <property name="iconSize">
-          <size>
-           <width>25</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
+         <item>
+          <widget class="QPushButton" name="closemenu">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>170</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Bahnschrift</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fafaff;
+padding-top: 1px;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+padding-top: 1px;
+}
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>Закрыть меню</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icon.qrc">
+             <normaloff>:/new/icon/icons/omenu.png</normaloff>
+             <normalon>:/new/icon/icons/omenu2.png</normalon>:/new/icon/icons/omenu.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="inventory">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>170</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Bahnschrift</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fafaff;
+padding-top: 1px;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+padding-top: 1px;
+}
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>Склад</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icon.qrc">
+             <normaloff>:/new/icon/icons/sklad.png</normaloff>
+             <normalon>:/new/icon/icons/sklad2.png</normalon>:/new/icon/icons/sklad.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="flowers">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>170</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Bahnschrift</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fafaff;
+padding-top: 1px;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+padding-top: 1px;
+}
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>Букеты</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icon.qrc">
+             <normaloff>:/new/icon/icons/flowers.png</normaloff>
+             <normalon>:/new/icon/icons/flowers2.png</normalon>:/new/icon/icons/flowers.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="clients">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>170</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Bahnschrift</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fafaff;
+padding-top: 1px;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+padding-top: 1px;
+}
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>Клиенты</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icon.qrc">
+             <normaloff>:/new/icon/icons/clients.png</normaloff>
+             <normalon>:/new/icon/icons/clients2.png</normalon>:/new/icon/icons/clients.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="stats">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>35</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>170</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Bahnschrift</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fafaff;
+padding-top: 1px;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+padding-top: 1px;
+}
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>Статистика</string>
+           </property>
+           <property name="icon">
+            <iconset resource="icon.qrc">
+             <normaloff>:/new/icon/icons/stats.png</normaloff>
+             <normalon>:/new/icon/icons/stats2.png</normalon>:/new/icon/icons/stats.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="inventory">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
-         <property name="minimumSize">
+         <property name="sizeHint" stdset="0">
           <size>
-           <width>35</width>
-           <height>37</height>
+           <width>20</width>
+           <height>388</height>
           </size>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>170</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Bahnschrift</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-         </property>
-         <property name="text">
-          <string>Склад</string>
-         </property>
-         <property name="icon">
-          <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/sklad.png</normaloff>
-           <normalon>:/new/icon/icons/sklad2.png</normalon>:/new/icon/icons/sklad.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>25</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
+        </spacer>
        </item>
-       <item>
-        <widget class="QPushButton" name="flowers">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="content" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(250, 250, 255);</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="leftMargin">
+        <number>5</number>
+       </property>
+       <property name="topMargin">
+        <number>5</number>
+       </property>
+       <property name="rightMargin">
+        <number>5</number>
+       </property>
+       <property name="bottomMargin">
+        <number>5</number>
+       </property>
+       <property name="horizontalSpacing">
+        <number>5</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QStackedWidget" name="stackedWidget">
+         <property name="currentIndex">
+          <number>0</number>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>35</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>170</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Bahnschrift</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-         </property>
-         <property name="text">
-          <string>Букеты</string>
-         </property>
-         <property name="icon">
-          <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/flowers.png</normaloff>
-           <normalon>:/new/icon/icons/flowers2.png</normalon>:/new/icon/icons/flowers.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>25</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="clients">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>35</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>170</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Bahnschrift</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-         </property>
-         <property name="text">
-          <string>Клиенты</string>
-         </property>
-         <property name="icon">
-          <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/clients.png</normaloff>
-           <normalon>:/new/icon/icons/clients2.png</normalon>:/new/icon/icons/clients.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>25</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="stats">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>35</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>170</width>
-           <height>37</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Bahnschrift</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
-QPushButton
-{
-float: left;
-border: 0;
-background: #30343f;
-color:#fff;
-}
-QPushButton::checked
-{
-float: left;
-border: 0;
-background: #fafaff;
-color:#30343f;
-}
-
-
-</string>
-         </property>
-         <property name="text">
-          <string>Статистика</string>
-         </property>
-         <property name="icon">
-          <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/stats.png</normaloff>
-           <normalon>:/new/icon/icons/stats2.png</normalon>:/new/icon/icons/stats.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>25</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
+         <widget class="QWidget" name="Page1">
+          <property name="maximumSize">
+           <size>
+            <width>743</width>
+            <height>583</height>
+           </size>
+          </property>
+          <widget class="QLabel" name="label">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>611</width>
+             <height>581</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>631</width>
+             <height>581</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(234, 174, 234); font-size: 30px; color: white;</string>
+           </property>
+           <property name="text">
+            <string>Page1</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="page_2"/>
         </widget>
        </item>
       </layout>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>409</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>150</y>
-      <width>291</width>
-      <height>301</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-   </widget>
+     </widget>
+    </item>
+   </layout>
    <zorder>fullmenu</zorder>
    <zorder>iconmenu</zorder>
-   <zorder>widget</zorder>
+   <zorder>content</zorder>
   </widget>
  </widget>
  <resources>
