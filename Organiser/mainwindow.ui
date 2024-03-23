@@ -13,239 +13,378 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(191, 189, 190);</string>
+   <string notr="true">background-color: #eaeaea;</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(250, 250, 255);</string>
+   </property>
    <widget class="QWidget" name="iconmenu" native="true">
     <property name="geometry">
      <rect>
-      <x>12</x>
-      <y>12</y>
-      <width>41</width>
-      <height>581</height>
+      <x>-1</x>
+      <y>9</y>
+      <width>37</width>
+      <height>601</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <property name="spacing">
-      <number>0</number>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>2000</height>
+     </size>
+    </property>
+    <property name="toolTipDuration">
+     <number>0</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #30343f;</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>1</y>
+       <width>39</width>
+       <height>187</height>
+      </rect>
      </property>
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QPushButton" name="pushButton_5">
-           <property name="minimumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="icon.qrc">
-             <normaloff>:/new/icon/icons/menu.png</normaloff>:/new/icon/icons/menu.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton">
-           <property name="minimumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="icon.qrc">
-             <normaloff>:/new/icon/icons/sklad.png</normaloff>:/new/icon/icons/sklad.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="minimumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="icon.qrc">
-             <normaloff>:/new/icon/icons/flowers.png</normaloff>:/new/icon/icons/flowers.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="minimumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="icon.qrc">
-             <normaloff>:/new/icon/icons/clients.png</normaloff>:/new/icon/icons/clients.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_4">
-           <property name="minimumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>35</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="icon.qrc">
-             <normaloff>:/new/icon/icons/stats.png</normaloff>:/new/icon/icons/stats.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>25</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>399</height>
-        </size>
-       </property>
-      </spacer>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="openmenu">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="icon.qrc">
+          <normaloff>:/new/icon/icons/menu.png</normaloff>
+          <normalon>:/new/icon/icons/menu2.png</normalon>:/new/icon/icons/menu.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="inventory_2">
+        <property name="minimumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="icon.qrc">
+          <normaloff>:/new/icon/icons/sklad.png</normaloff>
+          <normalon>:/new/icon/icons/sklad2.png</normalon>:/new/icon/icons/sklad.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="flowers_2">
+        <property name="minimumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="icon.qrc">
+          <normaloff>:/new/icon/icons/flowers.png</normaloff>
+          <normalon>:/new/icon/icons/flowers2.png</normalon>:/new/icon/icons/flowers.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="clients_2">
+        <property name="minimumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="icon.qrc">
+          <normaloff>:/new/icon/icons/clients.png</normaloff>
+          <normalon>:/new/icon/icons/clients2.png</normalon>:/new/icon/icons/clients.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stats_2">
+        <property name="minimumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>37</width>
+          <height>37</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="icon.qrc">
+          <normaloff>:/new/icon/icons/stats.png</normaloff>
+          <normalon>:/new/icon/icons/stats2.png</normalon>:/new/icon/icons/stats.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="content" native="true">
+    <property name="geometry">
+     <rect>
+      <x>37</x>
+      <y>0</y>
+      <width>761</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(250, 250, 255);</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QColumnView" name="columnView"/>
      </item>
     </layout>
    </widget>
@@ -255,11 +394,26 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>144</width>
-      <height>581</height>
+      <x>-1</x>
+      <y>9</y>
+      <width>141</width>
+      <height>601</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>2000</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #30343f;</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <property name="spacing">
@@ -269,7 +423,7 @@
       <number>0</number>
      </property>
      <property name="topMargin">
-      <number>0</number>
+      <number>1</number>
      </property>
      <property name="rightMargin">
       <number>0</number>
@@ -282,8 +436,14 @@
        <property name="spacing">
         <number>0</number>
        </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="closemenu">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
            <horstretch>0</horstretch>
@@ -293,13 +453,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>170</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="font">
@@ -307,13 +467,34 @@
            <family>Bahnschrift</family>
            <pointsize>12</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
          </property>
          <property name="text">
           <string>Закрыть меню</string>
          </property>
          <property name="icon">
           <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/omenu.png</normaloff>:/new/icon/icons/omenu.png</iconset>
+           <normaloff>:/new/icon/icons/omenu.png</normaloff>
+           <normalon>:/new/icon/icons/omenu2.png</normalon>:/new/icon/icons/omenu.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -330,7 +511,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_7">
+        <widget class="QPushButton" name="inventory">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
            <horstretch>0</horstretch>
@@ -340,13 +521,13 @@
          <property name="minimumSize">
           <size>
            <width>35</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>170</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="font">
@@ -354,13 +535,34 @@
            <family>Bahnschrift</family>
            <pointsize>12</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
          </property>
          <property name="text">
           <string>Склад</string>
          </property>
          <property name="icon">
           <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/sklad.png</normaloff>:/new/icon/icons/sklad.png</iconset>
+           <normaloff>:/new/icon/icons/sklad.png</normaloff>
+           <normalon>:/new/icon/icons/sklad2.png</normalon>:/new/icon/icons/sklad.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -377,7 +579,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_8">
+        <widget class="QPushButton" name="flowers">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
            <horstretch>0</horstretch>
@@ -387,13 +589,13 @@
          <property name="minimumSize">
           <size>
            <width>35</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>170</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="font">
@@ -401,13 +603,34 @@
            <family>Bahnschrift</family>
            <pointsize>12</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
          </property>
          <property name="text">
           <string>Букеты</string>
          </property>
          <property name="icon">
           <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/flowers.png</normaloff>:/new/icon/icons/flowers.png</iconset>
+           <normaloff>:/new/icon/icons/flowers.png</normaloff>
+           <normalon>:/new/icon/icons/flowers2.png</normalon>:/new/icon/icons/flowers.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -424,7 +647,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_9">
+        <widget class="QPushButton" name="clients">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
            <horstretch>0</horstretch>
@@ -434,13 +657,13 @@
          <property name="minimumSize">
           <size>
            <width>35</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>170</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="font">
@@ -448,13 +671,34 @@
            <family>Bahnschrift</family>
            <pointsize>12</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
          </property>
          <property name="text">
           <string>Клиенты</string>
          </property>
          <property name="icon">
           <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/clients.png</normaloff>:/new/icon/icons/clients.png</iconset>
+           <normaloff>:/new/icon/icons/clients.png</normaloff>
+           <normalon>:/new/icon/icons/clients2.png</normalon>:/new/icon/icons/clients.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -471,7 +715,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_10">
+        <widget class="QPushButton" name="stats">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
            <horstretch>0</horstretch>
@@ -481,13 +725,13 @@
          <property name="minimumSize">
           <size>
            <width>35</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>170</width>
-           <height>35</height>
+           <height>37</height>
           </size>
          </property>
          <property name="font">
@@ -496,12 +740,33 @@
            <pointsize>12</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton
+{
+float: left;
+border: 0;
+background: #30343f;
+color:#fff;
+}
+QPushButton::checked
+{
+float: left;
+border: 0;
+background: #fafaff;
+color:#30343f;
+}
+
+
+</string>
+         </property>
          <property name="text">
           <string>Статистика</string>
          </property>
          <property name="icon">
           <iconset resource="icon.qrc">
-           <normaloff>:/new/icon/icons/stats.png</normaloff>:/new/icon/icons/stats.png</iconset>
+           <normaloff>:/new/icon/icons/stats.png</normaloff>
+           <normalon>:/new/icon/icons/stats2.png</normalon>:/new/icon/icons/stats.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -527,23 +792,16 @@
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>401</height>
+         <height>409</height>
         </size>
        </property>
       </spacer>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="content" native="true">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>10</y>
-      <width>561</width>
-      <height>581</height>
-     </rect>
-    </property>
-   </widget>
+   <zorder>content</zorder>
+   <zorder>fullmenu</zorder>
+   <zorder>iconmenu</zorder>
   </widget>
  </widget>
  <resources>
@@ -551,7 +809,7 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton_5</sender>
+   <sender>openmenu</sender>
    <signal>clicked()</signal>
    <receiver>fullmenu</receiver>
    <slot>show()</slot>
@@ -567,14 +825,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_5</sender>
+   <sender>openmenu</sender>
    <signal>clicked()</signal>
    <receiver>iconmenu</receiver>
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>39</x>
-     <y>28</y>
+     <x>29</x>
+     <y>18</y>
     </hint>
     <hint type="destinationlabel">
      <x>29</x>
@@ -583,14 +841,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_6</sender>
+   <sender>closemenu</sender>
    <signal>clicked()</signal>
    <receiver>iconmenu</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>141</x>
-     <y>28</y>
+     <x>81</x>
+     <y>19</y>
     </hint>
     <hint type="destinationlabel">
      <x>27</x>
@@ -599,7 +857,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_6</sender>
+   <sender>closemenu</sender>
    <signal>clicked()</signal>
    <receiver>fullmenu</receiver>
    <slot>hide()</slot>
@@ -609,8 +867,168 @@
      <y>26</y>
     </hint>
     <hint type="destinationlabel">
-     <x>150</x>
-     <y>320</y>
+     <x>90</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inventory_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>inventory</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>96</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flowers_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>flowers</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>33</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clients_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>clients</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>36</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>125</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stats_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>stats</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>31</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>91</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stats</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>stats_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>36</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clients</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>clients_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>26</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>flowers</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>flowers_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>122</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>37</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inventory</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>inventory_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>33</x>
+     <y>46</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closemenu</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>openmenu</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>27</x>
+     <y>24</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>openmenu</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>closemenu</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>36</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>37</y>
     </hint>
    </hints>
   </connection>

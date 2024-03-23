@@ -104,11 +104,17 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_icon.cpp
 release/qrc_icon.cpp: ../Organiser/icon.qrc \
 		C:/Qt/6.6.2/mingw_64/bin/rcc.exe \
+		../Organiser/icons/sklad2.png \
 		../Organiser/icons/clients.png \
+		../Organiser/icons/omenu2.png \
 		../Organiser/icons/stats.png \
+		../Organiser/icons/clients2.png \
 		../Organiser/icons/flowers.png \
 		../Organiser/icons/menu.png \
 		../Organiser/icons/sklad.png \
+		../Organiser/icons/menu2.png \
+		../Organiser/icons/stats2.png \
+		../Organiser/icons/flowers2.png \
 		../Organiser/icons/omenu.png
 	C:\Qt\6.6.2\mingw_64\bin\rcc.exe -name icon --no-zstd ..\Organiser\icon.qrc -o release\qrc_icon.cpp
 
@@ -667,31 +673,7 @@ release/mainwindow.o: ../Organiser/mainwindow.cpp ../Organiser/mainwindow.h \
 		C:/Qt/6.6.2/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.6.2/mingw_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.6.2/mingw_64/include/QtWidgets/qtabwidget.h \
-		ui_mainwindow.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.6.2/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.6.2/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qeventloop.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qfuture.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qfutureinterface.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qmutex.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qdeadlinetimer.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qelapsedtimer.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qtsan_impl.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qresultstore.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qfuture_impl.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qthreadpool.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qthread.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qrunnable.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qexception.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qpromise.h \
-		C:/Qt/6.6.2/mingw_64/include/QtGui/qguiapplication.h \
-		C:/Qt/6.6.2/mingw_64/include/QtGui/qinputmethod.h \
-		C:/Qt/6.6.2/mingw_64/include/QtCore/qlocale.h \
-		C:/Qt/6.6.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-		C:/Qt/6.6.2/mingw_64/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\Organiser\mainwindow.cpp
 
 release/qrc_icon.o: release/qrc_icon.cpp 

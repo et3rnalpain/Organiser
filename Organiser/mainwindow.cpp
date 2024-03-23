@@ -13,3 +13,19 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+
+void MainWindow::on_closemenu_clicked()
+{
+    ui->content->resize(QSize(765,601));
+    ui->content->move(QPoint(37,0));
+}
+
+
+void MainWindow::on_openmenu_clicked()
+{
+    ui->content->resize(QSize(661,601));
+    ui->content->move(QPoint(140,0));
+}
+

@@ -12,7 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QColumnView>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -26,25 +27,25 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QWidget *iconmenu;
-    QVBoxLayout *verticalLayout_3;
-    QHBoxLayout *horizontalLayout;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QSpacerItem *verticalSpacer;
+    QPushButton *openmenu;
+    QPushButton *inventory_2;
+    QPushButton *flowers_2;
+    QPushButton *clients_2;
+    QPushButton *stats_2;
+    QWidget *content;
+    QGridLayout *gridLayout;
+    QColumnView *columnView;
     QWidget *fullmenu;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout_2;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_9;
-    QPushButton *pushButton_10;
+    QPushButton *closemenu;
+    QPushButton *inventory;
+    QPushButton *flowers;
+    QPushButton *clients;
+    QPushButton *stats;
     QSpacerItem *verticalSpacer_2;
-    QWidget *content;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -52,203 +53,419 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->setEnabled(true);
         MainWindow->resize(800, 600);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(191, 189, 190);"));
+        MainWindow->setMinimumSize(QSize(800, 600));
+        MainWindow->setMaximumSize(QSize(800, 600));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: #eaeaea;"));
+        MainWindow->setTabShape(QTabWidget::Triangular);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        centralwidget->setStyleSheet(QString::fromUtf8("background-color: rgb(250, 250, 255);"));
         iconmenu = new QWidget(centralwidget);
         iconmenu->setObjectName("iconmenu");
-        iconmenu->setGeometry(QRect(12, 12, 41, 581));
-        verticalLayout_3 = new QVBoxLayout(iconmenu);
-        verticalLayout_3->setSpacing(0);
-        verticalLayout_3->setObjectName("verticalLayout_3");
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(0);
-        horizontalLayout->setObjectName("horizontalLayout");
-        verticalLayout = new QVBoxLayout();
+        iconmenu->setGeometry(QRect(-1, 9, 37, 601));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(iconmenu->sizePolicy().hasHeightForWidth());
+        iconmenu->setSizePolicy(sizePolicy);
+        iconmenu->setMaximumSize(QSize(16777215, 2000));
+        iconmenu->setToolTipDuration(0);
+        iconmenu->setStyleSheet(QString::fromUtf8("background-color: #30343f;"));
+        layoutWidget = new QWidget(iconmenu);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(1, 1, 39, 187));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName("verticalLayout");
-        pushButton_5 = new QPushButton(iconmenu);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setMinimumSize(QSize(35, 35));
-        pushButton_5->setMaximumSize(QSize(35, 35));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        openmenu = new QPushButton(layoutWidget);
+        openmenu->setObjectName("openmenu");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(openmenu->sizePolicy().hasHeightForWidth());
+        openmenu->setSizePolicy(sizePolicy1);
+        openmenu->setMinimumSize(QSize(37, 37));
+        openmenu->setMaximumSize(QSize(37, 37));
+        openmenu->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/new/icon/icons/menu.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_5->setIcon(icon);
-        pushButton_5->setIconSize(QSize(25, 25));
-        pushButton_5->setCheckable(true);
-        pushButton_5->setAutoExclusive(true);
+        icon.addFile(QString::fromUtf8(":/new/icon/icons/menu2.png"), QSize(), QIcon::Normal, QIcon::On);
+        openmenu->setIcon(icon);
+        openmenu->setIconSize(QSize(25, 25));
+        openmenu->setCheckable(true);
+        openmenu->setAutoExclusive(true);
 
-        verticalLayout->addWidget(pushButton_5);
+        verticalLayout->addWidget(openmenu);
 
-        pushButton = new QPushButton(iconmenu);
-        pushButton->setObjectName("pushButton");
-        pushButton->setMinimumSize(QSize(35, 35));
-        pushButton->setMaximumSize(QSize(35, 35));
+        inventory_2 = new QPushButton(layoutWidget);
+        inventory_2->setObjectName("inventory_2");
+        inventory_2->setMinimumSize(QSize(37, 37));
+        inventory_2->setMaximumSize(QSize(37, 37));
+        inventory_2->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/new/icon/icons/sklad.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton->setIcon(icon1);
-        pushButton->setIconSize(QSize(25, 25));
-        pushButton->setCheckable(true);
-        pushButton->setAutoExclusive(true);
+        icon1.addFile(QString::fromUtf8(":/new/icon/icons/sklad2.png"), QSize(), QIcon::Normal, QIcon::On);
+        inventory_2->setIcon(icon1);
+        inventory_2->setIconSize(QSize(25, 25));
+        inventory_2->setCheckable(true);
+        inventory_2->setAutoExclusive(true);
 
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(inventory_2);
 
-        pushButton_2 = new QPushButton(iconmenu);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setMinimumSize(QSize(35, 35));
-        pushButton_2->setMaximumSize(QSize(35, 35));
+        flowers_2 = new QPushButton(layoutWidget);
+        flowers_2->setObjectName("flowers_2");
+        flowers_2->setMinimumSize(QSize(37, 37));
+        flowers_2->setMaximumSize(QSize(37, 37));
+        flowers_2->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/new/icon/icons/flowers.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_2->setIcon(icon2);
-        pushButton_2->setIconSize(QSize(25, 25));
-        pushButton_2->setCheckable(true);
-        pushButton_2->setAutoExclusive(true);
+        icon2.addFile(QString::fromUtf8(":/new/icon/icons/flowers2.png"), QSize(), QIcon::Normal, QIcon::On);
+        flowers_2->setIcon(icon2);
+        flowers_2->setIconSize(QSize(25, 25));
+        flowers_2->setCheckable(true);
+        flowers_2->setAutoExclusive(true);
 
-        verticalLayout->addWidget(pushButton_2);
+        verticalLayout->addWidget(flowers_2);
 
-        pushButton_3 = new QPushButton(iconmenu);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setMinimumSize(QSize(35, 35));
-        pushButton_3->setMaximumSize(QSize(35, 35));
+        clients_2 = new QPushButton(layoutWidget);
+        clients_2->setObjectName("clients_2");
+        clients_2->setMinimumSize(QSize(37, 37));
+        clients_2->setMaximumSize(QSize(37, 37));
+        clients_2->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/new/icon/icons/clients.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_3->setIcon(icon3);
-        pushButton_3->setIconSize(QSize(25, 25));
-        pushButton_3->setCheckable(true);
-        pushButton_3->setAutoExclusive(true);
+        icon3.addFile(QString::fromUtf8(":/new/icon/icons/clients2.png"), QSize(), QIcon::Normal, QIcon::On);
+        clients_2->setIcon(icon3);
+        clients_2->setIconSize(QSize(25, 25));
+        clients_2->setCheckable(true);
+        clients_2->setAutoExclusive(true);
 
-        verticalLayout->addWidget(pushButton_3);
+        verticalLayout->addWidget(clients_2);
 
-        pushButton_4 = new QPushButton(iconmenu);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setMinimumSize(QSize(35, 35));
-        pushButton_4->setMaximumSize(QSize(35, 35));
+        stats_2 = new QPushButton(layoutWidget);
+        stats_2->setObjectName("stats_2");
+        stats_2->setMinimumSize(QSize(37, 37));
+        stats_2->setMaximumSize(QSize(37, 37));
+        stats_2->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
         QIcon icon4;
         icon4.addFile(QString::fromUtf8(":/new/icon/icons/stats.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_4->setIcon(icon4);
-        pushButton_4->setIconSize(QSize(25, 25));
-        pushButton_4->setCheckable(true);
-        pushButton_4->setAutoExclusive(true);
+        icon4.addFile(QString::fromUtf8(":/new/icon/icons/stats2.png"), QSize(), QIcon::Normal, QIcon::On);
+        stats_2->setIcon(icon4);
+        stats_2->setIconSize(QSize(25, 25));
+        stats_2->setCheckable(true);
+        stats_2->setAutoExclusive(true);
 
-        verticalLayout->addWidget(pushButton_4);
+        verticalLayout->addWidget(stats_2);
 
+        content = new QWidget(centralwidget);
+        content->setObjectName("content");
+        content->setGeometry(QRect(37, 0, 761, 601));
+        content->setStyleSheet(QString::fromUtf8("background-color: rgb(250, 250, 255);"));
+        gridLayout = new QGridLayout(content);
+        gridLayout->setObjectName("gridLayout");
+        columnView = new QColumnView(content);
+        columnView->setObjectName("columnView");
 
-        horizontalLayout->addLayout(verticalLayout);
-
-
-        verticalLayout_3->addLayout(horizontalLayout);
-
-        verticalSpacer = new QSpacerItem(20, 399, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        verticalLayout_3->addItem(verticalSpacer);
+        gridLayout->addWidget(columnView, 0, 0, 1, 1);
 
         fullmenu = new QWidget(centralwidget);
         fullmenu->setObjectName("fullmenu");
         fullmenu->setEnabled(true);
-        fullmenu->setGeometry(QRect(10, 10, 144, 581));
+        fullmenu->setGeometry(QRect(-1, 9, 141, 601));
+        sizePolicy.setHeightForWidth(fullmenu->sizePolicy().hasHeightForWidth());
+        fullmenu->setSizePolicy(sizePolicy);
+        fullmenu->setMaximumSize(QSize(16777215, 2000));
+        fullmenu->setStyleSheet(QString::fromUtf8("background-color: #30343f;"));
         verticalLayout_4 = new QVBoxLayout(fullmenu);
         verticalLayout_4->setSpacing(0);
         verticalLayout_4->setObjectName("verticalLayout_4");
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_4->setContentsMargins(0, 1, 0, 0);
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName("verticalLayout_2");
-        pushButton_6 = new QPushButton(fullmenu);
-        pushButton_6->setObjectName("pushButton_6");
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Maximum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
-        pushButton_6->setSizePolicy(sizePolicy);
-        pushButton_6->setMinimumSize(QSize(0, 35));
-        pushButton_6->setMaximumSize(QSize(170, 35));
+        verticalLayout_2->setContentsMargins(-1, 0, -1, 0);
+        closemenu = new QPushButton(fullmenu);
+        closemenu->setObjectName("closemenu");
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Maximum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(closemenu->sizePolicy().hasHeightForWidth());
+        closemenu->setSizePolicy(sizePolicy2);
+        closemenu->setMinimumSize(QSize(0, 37));
+        closemenu->setMaximumSize(QSize(170, 37));
         QFont font;
         font.setFamilies({QString::fromUtf8("Bahnschrift")});
         font.setPointSize(12);
-        pushButton_6->setFont(font);
+        closemenu->setFont(font);
+        closemenu->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/new/icon/icons/omenu.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_6->setIcon(icon5);
-        pushButton_6->setIconSize(QSize(25, 25));
-        pushButton_6->setCheckable(true);
-        pushButton_6->setAutoExclusive(true);
+        icon5.addFile(QString::fromUtf8(":/new/icon/icons/omenu2.png"), QSize(), QIcon::Normal, QIcon::On);
+        closemenu->setIcon(icon5);
+        closemenu->setIconSize(QSize(25, 25));
+        closemenu->setCheckable(true);
+        closemenu->setAutoExclusive(true);
 
-        verticalLayout_2->addWidget(pushButton_6);
+        verticalLayout_2->addWidget(closemenu);
 
-        pushButton_7 = new QPushButton(fullmenu);
-        pushButton_7->setObjectName("pushButton_7");
-        sizePolicy.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
-        pushButton_7->setSizePolicy(sizePolicy);
-        pushButton_7->setMinimumSize(QSize(35, 35));
-        pushButton_7->setMaximumSize(QSize(170, 35));
-        pushButton_7->setFont(font);
-        pushButton_7->setIcon(icon1);
-        pushButton_7->setIconSize(QSize(25, 25));
-        pushButton_7->setCheckable(true);
-        pushButton_7->setAutoExclusive(true);
+        inventory = new QPushButton(fullmenu);
+        inventory->setObjectName("inventory");
+        sizePolicy2.setHeightForWidth(inventory->sizePolicy().hasHeightForWidth());
+        inventory->setSizePolicy(sizePolicy2);
+        inventory->setMinimumSize(QSize(35, 37));
+        inventory->setMaximumSize(QSize(170, 37));
+        inventory->setFont(font);
+        inventory->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
+        inventory->setIcon(icon1);
+        inventory->setIconSize(QSize(25, 25));
+        inventory->setCheckable(true);
+        inventory->setAutoExclusive(true);
 
-        verticalLayout_2->addWidget(pushButton_7);
+        verticalLayout_2->addWidget(inventory);
 
-        pushButton_8 = new QPushButton(fullmenu);
-        pushButton_8->setObjectName("pushButton_8");
-        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy);
-        pushButton_8->setMinimumSize(QSize(35, 35));
-        pushButton_8->setMaximumSize(QSize(170, 35));
-        pushButton_8->setFont(font);
-        pushButton_8->setIcon(icon2);
-        pushButton_8->setIconSize(QSize(25, 25));
-        pushButton_8->setCheckable(true);
-        pushButton_8->setAutoExclusive(true);
+        flowers = new QPushButton(fullmenu);
+        flowers->setObjectName("flowers");
+        sizePolicy2.setHeightForWidth(flowers->sizePolicy().hasHeightForWidth());
+        flowers->setSizePolicy(sizePolicy2);
+        flowers->setMinimumSize(QSize(35, 37));
+        flowers->setMaximumSize(QSize(170, 37));
+        flowers->setFont(font);
+        flowers->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
+        flowers->setIcon(icon2);
+        flowers->setIconSize(QSize(25, 25));
+        flowers->setCheckable(true);
+        flowers->setAutoExclusive(true);
 
-        verticalLayout_2->addWidget(pushButton_8);
+        verticalLayout_2->addWidget(flowers);
 
-        pushButton_9 = new QPushButton(fullmenu);
-        pushButton_9->setObjectName("pushButton_9");
-        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
-        pushButton_9->setSizePolicy(sizePolicy);
-        pushButton_9->setMinimumSize(QSize(35, 35));
-        pushButton_9->setMaximumSize(QSize(170, 35));
-        pushButton_9->setFont(font);
-        pushButton_9->setIcon(icon3);
-        pushButton_9->setIconSize(QSize(25, 25));
-        pushButton_9->setCheckable(true);
-        pushButton_9->setAutoExclusive(true);
+        clients = new QPushButton(fullmenu);
+        clients->setObjectName("clients");
+        sizePolicy2.setHeightForWidth(clients->sizePolicy().hasHeightForWidth());
+        clients->setSizePolicy(sizePolicy2);
+        clients->setMinimumSize(QSize(35, 37));
+        clients->setMaximumSize(QSize(170, 37));
+        clients->setFont(font);
+        clients->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
+        clients->setIcon(icon3);
+        clients->setIconSize(QSize(25, 25));
+        clients->setCheckable(true);
+        clients->setAutoExclusive(true);
 
-        verticalLayout_2->addWidget(pushButton_9);
+        verticalLayout_2->addWidget(clients);
 
-        pushButton_10 = new QPushButton(fullmenu);
-        pushButton_10->setObjectName("pushButton_10");
-        sizePolicy.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
-        pushButton_10->setSizePolicy(sizePolicy);
-        pushButton_10->setMinimumSize(QSize(35, 35));
-        pushButton_10->setMaximumSize(QSize(170, 35));
-        pushButton_10->setFont(font);
-        pushButton_10->setIcon(icon4);
-        pushButton_10->setIconSize(QSize(25, 25));
-        pushButton_10->setCheckable(true);
-        pushButton_10->setAutoExclusive(true);
+        stats = new QPushButton(fullmenu);
+        stats->setObjectName("stats");
+        sizePolicy2.setHeightForWidth(stats->sizePolicy().hasHeightForWidth());
+        stats->setSizePolicy(sizePolicy2);
+        stats->setMinimumSize(QSize(35, 37));
+        stats->setMaximumSize(QSize(170, 37));
+        stats->setFont(font);
+        stats->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fff;\n"
+"}\n"
+"QPushButton::checked\n"
+"{\n"
+"float: left;\n"
+"border: 0;\n"
+"background: #fafaff;\n"
+"color:#30343f;\n"
+"}\n"
+"\n"
+"\n"
+""));
+        stats->setIcon(icon4);
+        stats->setIconSize(QSize(25, 25));
+        stats->setCheckable(true);
+        stats->setAutoExclusive(true);
 
-        verticalLayout_2->addWidget(pushButton_10);
+        verticalLayout_2->addWidget(stats);
 
 
         verticalLayout_4->addLayout(verticalLayout_2);
 
-        verticalSpacer_2 = new QSpacerItem(20, 401, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_2 = new QSpacerItem(20, 409, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         verticalLayout_4->addItem(verticalSpacer_2);
 
-        content = new QWidget(centralwidget);
-        content->setObjectName("content");
-        content->setGeometry(QRect(230, 10, 561, 581));
         MainWindow->setCentralWidget(centralwidget);
+        content->raise();
+        fullmenu->raise();
+        iconmenu->raise();
 
         retranslateUi(MainWindow);
-        QObject::connect(pushButton_5, &QPushButton::clicked, fullmenu, qOverload<>(&QWidget::show));
-        QObject::connect(pushButton_5, &QPushButton::clicked, iconmenu, qOverload<>(&QWidget::hide));
-        QObject::connect(pushButton_6, &QPushButton::clicked, iconmenu, qOverload<>(&QWidget::show));
-        QObject::connect(pushButton_6, &QPushButton::clicked, fullmenu, qOverload<>(&QWidget::hide));
+        QObject::connect(openmenu, &QPushButton::clicked, fullmenu, qOverload<>(&QWidget::show));
+        QObject::connect(openmenu, &QPushButton::clicked, iconmenu, qOverload<>(&QWidget::hide));
+        QObject::connect(closemenu, &QPushButton::clicked, iconmenu, qOverload<>(&QWidget::show));
+        QObject::connect(closemenu, &QPushButton::clicked, fullmenu, qOverload<>(&QWidget::hide));
+        QObject::connect(inventory_2, &QPushButton::toggled, inventory, &QPushButton::setChecked);
+        QObject::connect(flowers_2, &QPushButton::toggled, flowers, &QPushButton::setChecked);
+        QObject::connect(clients_2, &QPushButton::toggled, clients, &QPushButton::setChecked);
+        QObject::connect(stats_2, &QPushButton::toggled, stats, &QPushButton::setChecked);
+        QObject::connect(stats, &QPushButton::toggled, stats_2, &QPushButton::setChecked);
+        QObject::connect(clients, &QPushButton::toggled, clients_2, &QPushButton::setChecked);
+        QObject::connect(flowers, &QPushButton::toggled, flowers_2, &QPushButton::setChecked);
+        QObject::connect(inventory, &QPushButton::toggled, inventory_2, &QPushButton::setChecked);
+        QObject::connect(closemenu, &QPushButton::toggled, openmenu, &QPushButton::setChecked);
+        QObject::connect(openmenu, &QPushButton::toggled, closemenu, &QPushButton::setChecked);
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -256,16 +473,16 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton_5->setText(QString());
-        pushButton->setText(QString());
-        pushButton_2->setText(QString());
-        pushButton_3->setText(QString());
-        pushButton_4->setText(QString());
-        pushButton_6->setText(QCoreApplication::translate("MainWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \320\274\320\265\320\275\321\216", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("MainWindow", "\320\241\320\272\320\273\320\260\320\264", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("MainWindow", "\320\221\321\203\320\272\320\265\321\202\321\213", nullptr));
-        pushButton_9->setText(QCoreApplication::translate("MainWindow", "\320\232\320\273\320\270\320\265\320\275\321\202\321\213", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("MainWindow", "\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260", nullptr));
+        openmenu->setText(QString());
+        inventory_2->setText(QString());
+        flowers_2->setText(QString());
+        clients_2->setText(QString());
+        stats_2->setText(QString());
+        closemenu->setText(QCoreApplication::translate("MainWindow", "\320\227\320\260\320\272\321\200\321\213\321\202\321\214 \320\274\320\265\320\275\321\216", nullptr));
+        inventory->setText(QCoreApplication::translate("MainWindow", "\320\241\320\272\320\273\320\260\320\264", nullptr));
+        flowers->setText(QCoreApplication::translate("MainWindow", "\320\221\321\203\320\272\320\265\321\202\321\213", nullptr));
+        clients->setText(QCoreApplication::translate("MainWindow", "\320\232\320\273\320\270\320\265\320\275\321\202\321\213", nullptr));
+        stats->setText(QCoreApplication::translate("MainWindow", "\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260", nullptr));
     } // retranslateUi
 
 };

@@ -6,5 +6,11 @@
         <file>icons/stats.png</file>
         <file>icons/menu.png</file>
         <file>icons/omenu.png</file>
+        <file>icons/clients2.png</file>
+        <file>icons/flowers2.png</file>
+        <file>icons/menu2.png</file>
+        <file>icons/omenu2.png</file>
+        <file>icons/sklad2.png</file>
+        <file>icons/stats2.png</file>
     </qresource>
 </RCC>
