@@ -23,6 +23,22 @@ private slots:
 
     void on_openmenu_clicked();
 
+    void on_inventory_clicked();
+
+    void on_flowers_clicked();
+
+    void on_clients_clicked();
+
+    void on_stats_clicked();
+
+    void on_inventory_2_clicked();
+
+    void on_flowers_2_clicked();
+
+    void on_clients_2_clicked();
+
+    void on_stats_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

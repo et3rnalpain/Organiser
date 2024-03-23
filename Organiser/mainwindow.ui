@@ -36,7 +36,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
@@ -54,14 +54,11 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(250, 250, 255);</string>
+    <string notr="true"/>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
      <number>0</number>
-    </property>
-    <property name="sizeConstraint">
-     <enum>QLayout::SetFixedSize</enum>
     </property>
     <property name="leftMargin">
      <number>0</number>
@@ -78,7 +75,7 @@
     <item>
      <widget class="QWidget" name="iconmenu" native="true">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -469,7 +466,7 @@ color:#30343f;
        <bool>true</bool>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -891,109 +888,127 @@ padding-top: 1px;
     <item>
      <widget class="QWidget" name="content" native="true">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>623</width>
+        <height>600</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>764</width>
+        <height>600</height>
+       </size>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(250, 250, 255);</string>
+       <string notr="true">background-color: #fafaff;</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <property name="leftMargin">
-        <number>5</number>
-       </property>
-       <property name="topMargin">
-        <number>5</number>
-       </property>
-       <property name="rightMargin">
-        <number>5</number>
-       </property>
-       <property name="bottomMargin">
-        <number>5</number>
-       </property>
-       <property name="horizontalSpacing">
-        <number>5</number>
-       </property>
-       <property name="verticalSpacing">
         <number>0</number>
        </property>
-       <item row="0" column="0">
-        <widget class="QStackedWidget" name="stackedWidget">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QStackedWidget" name="contentWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
-         <widget class="QWidget" name="Page1">
-          <property name="maximumSize">
-           <size>
-            <width>743</width>
-            <height>583</height>
-           </size>
-          </property>
-          <widget class="QLabel" name="label">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>611</width>
-             <height>581</height>
-            </rect>
-           </property>
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>631</width>
-             <height>581</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(234, 174, 234); font-size: 30px; color: white;</string>
-           </property>
-           <property name="text">
-            <string>Page1</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
+         <widget class="QWidget" name="page_4">
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="styleSheet">
+              <string notr="true">background-color: #fafaff;</string>
+             </property>
+             <property name="text">
+              <string>page4</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
-         <widget class="QWidget" name="page_2"/>
+         <widget class="QWidget" name="page_3">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="styleSheet">
+              <string notr="true">background-color:#;</string>
+             </property>
+             <property name="text">
+              <string>page3</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="page">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true">background-color:#;</string>
+             </property>
+             <property name="text">
+              <string>page1</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="page_2">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="styleSheet">
+              <string notr="true">background-color:#;</string>
+             </property>
+             <property name="text">
+              <string>page2</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
    </layout>
-   <zorder>fullmenu</zorder>
-   <zorder>iconmenu</zorder>
-   <zorder>content</zorder>
   </widget>
  </widget>
  <resources>
   <include location="icon.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>openmenu</sender>
-   <signal>clicked()</signal>
-   <receiver>fullmenu</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>26</x>
-     <y>28</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>130</x>
-     <y>254</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>openmenu</sender>
    <signal>clicked()</signal>
@@ -1027,34 +1042,18 @@ padding-top: 1px;
    </hints>
   </connection>
   <connection>
-   <sender>closemenu</sender>
-   <signal>clicked()</signal>
-   <receiver>fullmenu</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>109</x>
-     <y>26</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>90</x>
-     <y>310</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>inventory_2</sender>
+   <sender>stats_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>inventory</receiver>
+   <receiver>stats</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>35</x>
-     <y>65</y>
+     <x>31</x>
+     <y>169</y>
     </hint>
     <hint type="destinationlabel">
-     <x>96</x>
-     <y>69</y>
+     <x>91</x>
+     <y>171</y>
     </hint>
    </hints>
   </connection>
@@ -1075,66 +1074,18 @@ padding-top: 1px;
    </hints>
   </connection>
   <connection>
-   <sender>clients_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>clients</receiver>
-   <slot>setChecked(bool)</slot>
+   <sender>closemenu</sender>
+   <signal>clicked()</signal>
+   <receiver>fullmenu</receiver>
+   <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>36</x>
-     <y>138</y>
+     <x>109</x>
+     <y>26</y>
     </hint>
     <hint type="destinationlabel">
-     <x>125</x>
-     <y>138</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>stats_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>stats</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>31</x>
-     <y>169</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>91</x>
-     <y>171</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>stats</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>stats_2</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>106</x>
-     <y>172</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>36</x>
-     <y>177</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>clients</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>clients_2</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>115</x>
-     <y>137</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>26</x>
-     <y>126</y>
+     <x>90</x>
+     <y>310</y>
     </hint>
    </hints>
   </connection>
@@ -1155,18 +1106,34 @@ padding-top: 1px;
    </hints>
   </connection>
   <connection>
-   <sender>inventory</sender>
+   <sender>openmenu</sender>
+   <signal>clicked()</signal>
+   <receiver>fullmenu</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>26</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>130</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inventory_2</sender>
    <signal>toggled(bool)</signal>
-   <receiver>inventory_2</receiver>
+   <receiver>inventory</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>107</x>
-     <y>50</y>
+     <x>35</x>
+     <y>65</y>
     </hint>
     <hint type="destinationlabel">
-     <x>33</x>
-     <y>56</y>
+     <x>96</x>
+     <y>69</y>
     </hint>
    </hints>
   </connection>
@@ -1199,6 +1166,70 @@ padding-top: 1px;
     <hint type="destinationlabel">
      <x>81</x>
      <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stats</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>stats_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>172</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>36</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clients_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>clients</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>36</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>125</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clients</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>clients_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>26</x>
+     <y>126</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inventory</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>inventory_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>33</x>
+     <y>56</y>
     </hint>
    </hints>
   </connection>
