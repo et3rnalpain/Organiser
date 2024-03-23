@@ -927,7 +927,7 @@ padding-top: 1px;
        <item row="0" column="1">
         <widget class="QStackedWidget" name="contentWidget">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="page_4">
           <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -937,7 +937,7 @@ padding-top: 1px;
               <string notr="true">background-color: #fafaff;</string>
              </property>
              <property name="text">
-              <string>НИКИТОСССС БРИИТИТТЫЫЙЙЙЙ ЫЫЫЫЫЫЫЫЫЫЫЫЫ</string>
+              <string>яйцеголовый</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
