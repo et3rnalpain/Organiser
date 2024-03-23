@@ -14,11 +14,13 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -56,13 +58,15 @@ public:
     QLabel *label_4;
     QWidget *page_3;
     QHBoxLayout *horizontalLayout_4;
-    QLabel *label_3;
-    QWidget *page;
+    QTableView *info;
+    QWidget *page_sklad;
     QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButton_2;
     QLabel *label;
     QWidget *page_2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_2;
+    QPushButton *pushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -541,26 +545,29 @@ public:
         page_3->setObjectName("page_3");
         horizontalLayout_4 = new QHBoxLayout(page_3);
         horizontalLayout_4->setObjectName("horizontalLayout_4");
-        label_3 = new QLabel(page_3);
-        label_3->setObjectName("label_3");
-        label_3->setStyleSheet(QString::fromUtf8("background-color:#;"));
-        label_3->setAlignment(Qt::AlignCenter);
+        info = new QTableView(page_3);
+        info->setObjectName("info");
 
-        horizontalLayout_4->addWidget(label_3);
+        horizontalLayout_4->addWidget(info);
 
         contentWidget->addWidget(page_3);
-        page = new QWidget();
-        page->setObjectName("page");
-        horizontalLayout_2 = new QHBoxLayout(page);
+        page_sklad = new QWidget();
+        page_sklad->setObjectName("page_sklad");
+        horizontalLayout_2 = new QHBoxLayout(page_sklad);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label = new QLabel(page);
+        pushButton_2 = new QPushButton(page_sklad);
+        pushButton_2->setObjectName("pushButton_2");
+
+        horizontalLayout_2->addWidget(pushButton_2);
+
+        label = new QLabel(page_sklad);
         label->setObjectName("label");
         label->setStyleSheet(QString::fromUtf8("background-color:#;"));
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_2->addWidget(label);
 
-        contentWidget->addWidget(page);
+        contentWidget->addWidget(page_sklad);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
         horizontalLayout_3 = new QHBoxLayout(page_2);
@@ -571,6 +578,11 @@ public:
         label_2->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_3->addWidget(label_2);
+
+        pushButton = new QPushButton(page_2);
+        pushButton->setObjectName("pushButton");
+
+        horizontalLayout_3->addWidget(pushButton);
 
         contentWidget->addWidget(page_2);
 
@@ -597,7 +609,7 @@ public:
         QObject::connect(clients, &QPushButton::toggled, clients_2, &QPushButton::setChecked);
         QObject::connect(inventory, &QPushButton::toggled, inventory_2, &QPushButton::setChecked);
 
-        contentWidget->setCurrentIndex(0);
+        contentWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -616,10 +628,11 @@ public:
         flowers->setText(QCoreApplication::translate("MainWindow", "\320\221\321\203\320\272\320\265\321\202\321\213", nullptr));
         clients->setText(QCoreApplication::translate("MainWindow", "\320\232\320\273\320\270\320\265\320\275\321\202\321\213", nullptr));
         stats->setText(QCoreApplication::translate("MainWindow", "\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "page4", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "page3", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "\321\217\320\271\321\206\320\265\320\263\320\276\320\273\320\276\320\262\321\213\320\271", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\320\272\320\275\320\276\320\277\320\272\320\260 \320\275\320\270\320\272\320\270\321\202\321\213", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "page1", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "page2", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "\320\241\320\236\320\241\320\230 \320\245\320\243\320\231", nullptr));
     } // retranslateUi
 
 };
