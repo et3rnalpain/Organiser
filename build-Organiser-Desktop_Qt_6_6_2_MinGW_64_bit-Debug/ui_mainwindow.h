@@ -12,11 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QColumnView>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -34,9 +34,6 @@ public:
     QPushButton *flowers_2;
     QPushButton *clients_2;
     QPushButton *stats_2;
-    QWidget *content;
-    QGridLayout *gridLayout;
-    QColumnView *columnView;
     QWidget *fullmenu;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout_2;
@@ -46,6 +43,10 @@ public:
     QPushButton *clients;
     QPushButton *stats;
     QSpacerItem *verticalSpacer_2;
+    QStackedWidget *content;
+    QWidget *page_3;
+    QListWidget *listWidget;
+    QWidget *page_4;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -62,7 +63,7 @@ public:
         centralwidget->setStyleSheet(QString::fromUtf8("background-color: rgb(250, 250, 255);"));
         iconmenu = new QWidget(centralwidget);
         iconmenu->setObjectName("iconmenu");
-        iconmenu->setGeometry(QRect(-1, 9, 37, 601));
+        iconmenu->setGeometry(QRect(-1, -7, 38, 607));
         QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -73,11 +74,11 @@ public:
         iconmenu->setStyleSheet(QString::fromUtf8("background-color: #30343f;"));
         layoutWidget = new QWidget(iconmenu);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(1, 1, 39, 187));
+        layoutWidget->setGeometry(QRect(1, 1, 39, 203));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout->setContentsMargins(0, 4, 0, 0);
         openmenu = new QPushButton(layoutWidget);
         openmenu->setObjectName("openmenu");
         QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
@@ -243,21 +244,10 @@ public:
 
         verticalLayout->addWidget(stats_2);
 
-        content = new QWidget(centralwidget);
-        content->setObjectName("content");
-        content->setGeometry(QRect(37, 0, 761, 601));
-        content->setStyleSheet(QString::fromUtf8("background-color: rgb(250, 250, 255);"));
-        gridLayout = new QGridLayout(content);
-        gridLayout->setObjectName("gridLayout");
-        columnView = new QColumnView(content);
-        columnView->setObjectName("columnView");
-
-        gridLayout->addWidget(columnView, 0, 0, 1, 1);
-
         fullmenu = new QWidget(centralwidget);
         fullmenu->setObjectName("fullmenu");
         fullmenu->setEnabled(true);
-        fullmenu->setGeometry(QRect(-1, 9, 141, 601));
+        fullmenu->setGeometry(QRect(-1, -7, 141, 607));
         sizePolicy.setHeightForWidth(fullmenu->sizePolicy().hasHeightForWidth());
         fullmenu->setSizePolicy(sizePolicy);
         fullmenu->setMaximumSize(QSize(16777215, 2000));
@@ -269,7 +259,7 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout_2->setContentsMargins(-1, 0, -1, 0);
+        verticalLayout_2->setContentsMargins(-1, 6, -1, 0);
         closemenu = new QPushButton(fullmenu);
         closemenu->setObjectName("closemenu");
         QSizePolicy sizePolicy2(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Maximum);
@@ -446,10 +436,27 @@ public:
 
         verticalLayout_4->addItem(verticalSpacer_2);
 
+        content = new QStackedWidget(centralwidget);
+        content->setObjectName("content");
+        content->setGeometry(QRect(38, 0, 761, 601));
+        page_3 = new QWidget();
+        page_3->setObjectName("page_3");
+        listWidget = new QListWidget(page_3);
+        listWidget->setObjectName("listWidget");
+        listWidget->setGeometry(QRect(10, 10, 741, 581));
+        QSizePolicy sizePolicy3(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(listWidget->sizePolicy().hasHeightForWidth());
+        listWidget->setSizePolicy(sizePolicy3);
+        content->addWidget(page_3);
+        page_4 = new QWidget();
+        page_4->setObjectName("page_4");
+        content->addWidget(page_4);
         MainWindow->setCentralWidget(centralwidget);
-        content->raise();
         fullmenu->raise();
         iconmenu->raise();
+        content->raise();
 
         retranslateUi(MainWindow);
         QObject::connect(openmenu, &QPushButton::clicked, fullmenu, qOverload<>(&QWidget::show));
