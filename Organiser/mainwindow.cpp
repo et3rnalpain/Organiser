@@ -26,9 +26,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     while(query.next())
     {
+        QSqlQuery query2;
+        query2.exec("SELECT b_id, f_id, flowers.Name, f_ammount FROM consistof JOIN flowers ON f_id = flowers.id WHERE b_id =" + QString::number(currec));
+        QString c;
+        while(query2.next())
+        {
+            c += query2.value(2).toString() +  " ( " + query2.value(3).toString() +  " ) ";
+        }
         QString n = query.value(0).toString();
         QString p = query.value(2).toString();
-        createNewBouqetWidget(currec-1,n,p);
+        createNewBouqetWidget(currec-1,n,p, c);
         currec++;
     }
     createPieChart();
@@ -97,7 +104,7 @@ void MainWindow::createPieChart()
     ui->gridLayout_3->addWidget(chartView,0,0);
 }
 
-void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flprice)
+void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flprice, QString consist)
 {
     QFrame* frame = new QFrame();
     QString name = "bouqet" + QString::number(rowNum);// + "_" + QString::number(colNum);
@@ -105,21 +112,20 @@ void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flpri
     frame->setMinimumSize(QSize(500, 50));
     frame->setMaximumSize(QSize(10000, 50));
     frame->setStyleSheet(QString::fromUtf8(
-        "border: solid;\n"
-        "border-width: 2px;\n"
-        "background-color: rgb(250, 250, 255);\n"
-        "border-color: #30343f;\n"
-        "border-radius: 4px;\n"));
+        "QFrame {border: solid; border-width: 2px;background-color: #30343f;border-color: #30343f;border-radius: 4px;}\n"
+        "QLabel {background-color: #fafaff; font-size: 16px; color: #30343f}"));
     QHBoxLayout* hframelayout = new QHBoxLayout(frame);
     hframelayout->setObjectName("hfamelayout" + QString::number(rowNum));
     QLabel* bouqetName = new QLabel(frame);
     bouqetName->setObjectName("bouqetName" + QString::number(rowNum));
     bouqetName->setText(flname);
+    bouqetName->setFont(QFont(QString::fromUtf8("Bahnschrift")));
     hframelayout->insertWidget(0,bouqetName,0);
 
     QLabel* consistof = new QLabel(frame);
     consistof->setObjectName("consistof" + QString::number(rowNum));
-    consistof->setText("Состоит из говна");
+    consistof->setText(consist);
+    consistof->setFont(QFont(QString::fromUtf8("Bahnschrift")));
     hframelayout->insertWidget(1,consistof,0);
 
     QSpacerItem* hSpacer = new QSpacerItem(600, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
@@ -128,7 +134,8 @@ void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flpri
 
     QLabel* price = new QLabel(frame);
     price->setObjectName("price" + QString::number(rowNum));
-    price->setText(flprice);
+    price->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    price->setText(flprice + "₽");
     hframelayout->insertWidget(3,price,0);
     ui->bouqetContentLayout->insertWidget(rowNum,frame,0,Qt::AlignTop);
 }
