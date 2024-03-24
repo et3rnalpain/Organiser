@@ -22,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent)
         QString p = model->index(i,2).data().toString();
         createNewBouqetWidget(i,n,p);
     }
-
 }
 
 MainWindow::~MainWindow()

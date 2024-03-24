@@ -74,6 +74,7 @@ public:
     QWidget *page_2;
     QHBoxLayout *horizontalLayout_3;
     QWidget *widget;
+    QGridLayout *gridLayout_3;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -632,6 +633,8 @@ public:
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         widget = new QWidget(page_2);
         widget->setObjectName("widget");
+        gridLayout_3 = new QGridLayout(widget);
+        gridLayout_3->setObjectName("gridLayout_3");
 
         horizontalLayout_3->addWidget(widget);
 
