@@ -39,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
         currec++;
     }
     createPieChart();
+    createBarChart();
 }
 
 MainWindow::~MainWindow()
@@ -49,7 +50,41 @@ MainWindow::~MainWindow()
 void MainWindow::createBarChart()
 {
     QSqlQuery query;
+    query.exec("SELECT bouqets.Name, COUNT(bouquete_id) FROM orders JOIN bouqets ON orders.bouquete_id = bouqets.id JOIN clients ON orders.client_id = clients.id GROUP BY bouquete_id");
+    int current_row = 1;
 
+    int size = 1;
+
+    if(query.last())
+    {
+        size =  query.at() + 1;
+        query.first();
+        query.previous();
+    }
+
+    QBarSeries* series = new QBarSeries();
+    QBarSet** set = new QBarSet*[size];
+    while (query.next()){
+        set[current_row - 1] = new QBarSet(query.value(0).toString());
+        *set[current_row - 1] << query.value(1).toInt();
+        series->append(set[current_row - 1]);
+    }
+
+    QChart* chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle("Какой букет покупают чаще всего?");
+    //chart->createDefaultAxes();
+    //chart->setAxisX(series);
+    chart->legend()->setVisible(true);
+
+    QChartView* chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setVisible(true);
+    chartView->setMaximumSize(400,400);
+
+    ui->gridLayout_3->addWidget(chartView,0,1);
+
+    delete[] set;
 }
 
 void MainWindow::createPieChart()
@@ -87,11 +122,11 @@ void MainWindow::createPieChart()
     QPieSlice* slice_male = series->slices().at(0);
     QPieSlice* slice_female = series->slices().at(1);
     slice_male->setLabelVisible(true);
-    slice_male->setPen(QPen(Qt::darkBlue,2));
-    slice_male->setBrush(Qt::darkBlue);
+    slice_male->setPen(QPen(Qt::blue,2));
+    slice_male->setBrush(Qt::blue);
     slice_female->setLabelVisible(true);
-    slice_female->setPen(QPen(Qt::darkRed,2));
-    slice_female->setBrush(Qt::darkRed);
+    slice_female->setPen(QPen(Qt::red,2));
+    slice_female->setBrush(Qt::red);
 
     QChart* chart = new QChart();
     chart->addSeries(series);
