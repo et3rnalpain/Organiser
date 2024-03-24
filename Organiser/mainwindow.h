@@ -17,7 +17,6 @@
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
 
-
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
