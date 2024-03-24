@@ -39,6 +39,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::createBarChart()
+{
+    QSqlQuery query;
+
+}
+
 void MainWindow::createPieChart()
 {
     QSqlQuery query;

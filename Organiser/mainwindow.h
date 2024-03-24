@@ -20,6 +20,8 @@
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
 
+#include <QVector>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -35,6 +37,7 @@ public:
     ~MainWindow();
     void createNewBouqetWidget(int rowNum, QString flname, QString flprice);
     void createPieChart();
+    void createBarChart();
 
 private slots:
 
