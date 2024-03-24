@@ -15,8 +15,10 @@ MainWindow::MainWindow(QWidget *parent)
         model->setTable("flowers");
         model->select();
         this->ui->info->setModel(model);
-        model->
     }
+    this->createNewBouqetWidget(0);
+    this->createNewBouqetWidget(0);
+    this->createNewBouqetWidget(0);
 }
 
 MainWindow::~MainWindow()
@@ -24,31 +26,64 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::createNewBouqetWidget(int rowNum)
+{
+    QFrame* frame = new QFrame();
+    QString name = "bouqet" + QString::number(rowNum);// + "_" + QString::number(colNum);
+    frame->setObjectName(name);
+    frame->setMinimumSize(QSize(500, 50));
+    frame->setMaximumSize(QSize(10000, 50));
+    frame->setStyleSheet(QString::fromUtf8("border: solid;\n"
+                                                  "border-width: 2px;\n"
+                                                  "background-color: rgb(250, 250, 255);\n"
+                                                  "border-color: #30343f;\n"
+                                           "border-radius: 4px;"));
+    QHBoxLayout* hframelayout = new QHBoxLayout();
+    hframelayout->setObjectName("hfamelayout" + QString::number(rowNum));
+    QLabel* bouqetName = new QLabel(frame);
+    bouqetName->setObjectName("bouqetName" + QString::number(rowNum));
+    bouqetName->setText("Govno");
+    hframelayout->addWidget(bouqetName);
+
+    QLabel* consistof = new QLabel(frame);
+    consistof->setObjectName("consistof" + QString::number(rowNum));
+
+    hframelayout->addWidget(consistof);
+
+    QSpacerItem* hSpacer = new QSpacerItem(400, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+    hframelayout->addItem(hSpacer);
+
+    QLabel* price = new QLabel(frame);
+    price->setObjectName("price" + QString::number(rowNum));
+    price->setText("1000R");
+    hframelayout->addWidget(price);
+    ui->bouqetContentLayout->insertWidget(0,frame,0,Qt::AlignTop);
+}
+
 
 
 void MainWindow::on_closemenu_clicked()
 {
-    ui->content->resize(QSize(765,601));
     ui->content->move(QPoint(38,0));
 }
 
 
 void MainWindow::on_openmenu_clicked()
 {
-    ui->content->resize(QSize(661,601));
     ui->content->move(QPoint(140,0));
 }
 
 
 void MainWindow::on_inventory_clicked()
 {
-    ui->contentWidget->setCurrentIndex(0);
+    ui->contentWidget->setCurrentIndex(1);
 }
 
 
 void MainWindow::on_flowers_clicked()
 {
-    ui->contentWidget->setCurrentIndex(1);
+    ui->contentWidget->setCurrentIndex(0);
 }
 
 
@@ -66,13 +101,13 @@ void MainWindow::on_stats_clicked()
 
 void MainWindow::on_inventory_2_clicked()
 {
-    ui->contentWidget->setCurrentIndex(0);
+    ui->contentWidget->setCurrentIndex(1);
 }
 
 
 void MainWindow::on_flowers_2_clicked()
 {
-    ui->contentWidget->setCurrentIndex(1);
+    ui->contentWidget->setCurrentIndex(0);
 }
 
 
