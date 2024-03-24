@@ -26,9 +26,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     while(query.next())
     {
+        QSqlQuery query2;
+        query2.exec("SELECT b_id, f_id FROM consistof WHERE b_id = " + QString::number(currec));
+        QString c;
+        while(query2.next())
+        {
+            c += query2.value(1).toString() +  " ";
+        }
         QString n = query.value(0).toString();
         QString p = query.value(2).toString();
-        createNewBouqetWidget(currec-1,n,p);
+        createNewBouqetWidget(currec-1,n,p, c);
         currec++;
     }
     createPieChart();
@@ -91,7 +98,7 @@ void MainWindow::createPieChart()
     ui->gridLayout_3->addWidget(chartView,0,0);
 }
 
-void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flprice)
+void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flprice, QString consist)
 {
     QFrame* frame = new QFrame();
     QString name = "bouqet" + QString::number(rowNum);// + "_" + QString::number(colNum);
@@ -113,7 +120,7 @@ void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flpri
 
     QLabel* consistof = new QLabel(frame);
     consistof->setObjectName("consistof" + QString::number(rowNum));
-    consistof->setText("Состоит из говна");
+    consistof->setText(consist);
     hframelayout->insertWidget(1,consistof,0);
 
     QSpacerItem* hSpacer = new QSpacerItem(600, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);

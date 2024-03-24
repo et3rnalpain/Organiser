@@ -33,7 +33,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void createNewBouqetWidget(int rowNum, QString flname, QString flprice);
+    void createNewBouqetWidget(int rowNum, QString flname, QString flprice, QString consist);
     void createPieChart();
 
 private slots:
