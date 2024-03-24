@@ -73,8 +73,7 @@ public:
     QLabel *label;
     QWidget *page_2;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_2;
-    QPushButton *pushButton;
+    QWidget *widget;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -631,17 +630,10 @@ public:
         page_2->setObjectName("page_2");
         horizontalLayout_3 = new QHBoxLayout(page_2);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        label_2 = new QLabel(page_2);
-        label_2->setObjectName("label_2");
-        label_2->setStyleSheet(QString::fromUtf8("background-color:#;"));
-        label_2->setAlignment(Qt::AlignCenter);
+        widget = new QWidget(page_2);
+        widget->setObjectName("widget");
 
-        horizontalLayout_3->addWidget(label_2);
-
-        pushButton = new QPushButton(page_2);
-        pushButton->setObjectName("pushButton");
-
-        horizontalLayout_3->addWidget(pushButton);
+        horizontalLayout_3->addWidget(widget);
 
         contentWidget->addWidget(page_2);
 
@@ -668,7 +660,7 @@ public:
         QObject::connect(clients, &QPushButton::toggled, clients_2, &QPushButton::setChecked);
         QObject::connect(inventory, &QPushButton::toggled, inventory_2, &QPushButton::setChecked);
 
-        contentWidget->setCurrentIndex(0);
+        contentWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -691,8 +683,6 @@ public:
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "\320\272\320\275\320\276\320\277\320\272\320\260 \320\275\320\270\320\272\320\270\321\202\321\213", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "page1", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "page2", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "\320\241\320\236\320\241\320\230 \320\245\320\243\320\231", nullptr));
     } // retranslateUi
 
 };
