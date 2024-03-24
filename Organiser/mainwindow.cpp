@@ -32,7 +32,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::createPieChart()
 {
-    QSqlQuery query;
+    /*QSqlQuery query;
 
     int male_count = 1, female_count = 1;;
 
@@ -52,9 +52,9 @@ void MainWindow::createPieChart()
         female_count = 1;
     }
 
-    int total_count = male_count + female_count;
+    int total_count = male_count + female_count;*/
 
-    //int male_count = 10, female_count = 15, total_count = male_count + female_count;
+    int male_count = 10, female_count = 15, total_count = male_count + female_count;
 
     QPieSeries* series = new QPieSeries();
     series->append("Женщины", female_count/(total_count * 1.0f) * 100);
