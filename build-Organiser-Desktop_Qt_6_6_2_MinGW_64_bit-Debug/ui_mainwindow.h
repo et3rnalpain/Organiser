@@ -668,7 +668,7 @@ public:
         QObject::connect(clients, &QPushButton::toggled, clients_2, &QPushButton::setChecked);
         QObject::connect(inventory, &QPushButton::toggled, inventory_2, &QPushButton::setChecked);
 
-        contentWidget->setCurrentIndex(0);
+        contentWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
