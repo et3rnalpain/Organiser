@@ -22,12 +22,62 @@ MainWindow::MainWindow(QWidget *parent)
         QString p = model->index(i,2).data().toString();
         createNewBouqetWidget(i,n,p);
     }
-
+    createPieChart();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::createPieChart()
+{
+    QSqlQuery query;
+
+    int male_count = 1, female_count = 1;;
+
+    if (query.exec("SELECT count(*) FROM clients WHERE Sex = 'муж'"))
+    {
+        male_count = query.value(0).toInt();
+    }
+    else {
+        male_count = 1;
+    }
+
+    if (query.exec("SELECT count(*) FROM clients WHERE Sex = 'жен'"))
+    {
+        female_count = query.value(0).toInt();
+    }
+    else {
+        female_count = 1;
+    }
+
+    int total_count = male_count + female_count;
+
+    //int male_count = 10, female_count = 15, total_count = male_count + female_count;
+
+    QPieSeries* series = new QPieSeries();
+    series->append("Женщины", female_count/(total_count * 1.0f) * 100);
+    series->append("Мужчины", male_count/(total_count * 1.0f) * 100);
+
+    QPieSlice* slice_male = series->slices().at(0);
+    QPieSlice* slice_female = series->slices().at(1);
+    slice_male->setLabelVisible(true);
+    slice_male->setPen(QPen(Qt::darkBlue,2));
+    slice_male->setBrush(Qt::darkBlue);
+    slice_female->setLabelVisible(true);
+    slice_female->setPen(QPen(Qt::darkRed,2));
+    slice_female->setBrush(Qt::darkRed);
+
+    QChart* chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle("Мужчины/женщины");
+    QChartView* chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    chartView->setMaximumSize(400,400);
+
+    ui->gridLayout_3->addWidget(chartView,0,0);
 }
 
 void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flprice)

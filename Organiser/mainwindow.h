@@ -5,6 +5,8 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlTableModel>
+#include <QSqlQuery>
+#include <QSqlRecord>
 
 #include <QtCharts/QChartView>
 #include <QtCharts/QBarSeries>
@@ -31,6 +33,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void createNewBouqetWidget(int rowNum, QString flname, QString flprice);
+    void createPieChart();
 
 private slots:
 
@@ -53,6 +56,8 @@ private slots:
     void on_clients_2_clicked();
 
     void on_stats_2_clicked();
+
+    void on_pie_chart_sex_customContextMenuRequested(const QPoint &pos);
 
 private:
     Ui::MainWindow *ui;
