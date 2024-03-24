@@ -933,7 +933,7 @@ padding-top: 1px;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="page_4">
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1088,24 +1088,7 @@ color:#fafaff;
          <widget class="QWidget" name="page_2">
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLabel" name="label_2">
-             <property name="styleSheet">
-              <string notr="true">background-color:#;</string>
-             </property>
-             <property name="text">
-              <string>page2</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton">
-             <property name="text">
-              <string>СОСИ ХУЙ</string>
-             </property>
-            </widget>
+            <widget class="QWidget" name="widget" native="true"/>
            </item>
           </layout>
          </widget>
