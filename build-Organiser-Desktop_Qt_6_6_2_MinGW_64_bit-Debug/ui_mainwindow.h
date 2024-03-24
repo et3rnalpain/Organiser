@@ -55,11 +55,15 @@ public:
     QGridLayout *gridLayout;
     QStackedWidget *contentWidget;
     QWidget *page_4;
-    QHBoxLayout *horizontalLayout_5;
+    QVBoxLayout *verticalLayout_6;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *bouqetContentLayout;
     QSpacerItem *verticalSpacer_3;
+    QHBoxLayout *horizontalLayout_5;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
     QWidget *page_3;
     QHBoxLayout *horizontalLayout_4;
     QTableView *info;
@@ -534,14 +538,14 @@ public:
         contentWidget->setSizePolicy(sizePolicy);
         page_4 = new QWidget();
         page_4->setObjectName("page_4");
-        horizontalLayout_5 = new QHBoxLayout(page_4);
-        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        verticalLayout_6 = new QVBoxLayout(page_4);
+        verticalLayout_6->setObjectName("verticalLayout_6");
         scrollArea = new QScrollArea(page_4);
         scrollArea->setObjectName("scrollArea");
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 670, 576));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 704, 552));
         bouqetContentLayout = new QVBoxLayout(scrollAreaWidgetContents_2);
         bouqetContentLayout->setSpacing(6);
         bouqetContentLayout->setObjectName("bouqetContentLayout");
@@ -551,7 +555,42 @@ public:
 
         scrollArea->setWidget(scrollAreaWidgetContents_2);
 
-        horizontalLayout_5->addWidget(scrollArea);
+        verticalLayout_6->addWidget(scrollArea);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer);
+
+        pushButton_3 = new QPushButton(page_4);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setMinimumSize(QSize(100, 0));
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"float: center;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fafaff;\n"
+"}"));
+
+        horizontalLayout_5->addWidget(pushButton_3);
+
+        pushButton_4 = new QPushButton(page_4);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setMinimumSize(QSize(100, 0));
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"float: center;\n"
+"border: 0;\n"
+"background: #30343f;\n"
+"color:#fafaff;\n"
+"}"));
+
+        horizontalLayout_5->addWidget(pushButton_4);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_5);
 
         contentWidget->addWidget(page_4);
         page_3 = new QWidget();
@@ -643,6 +682,8 @@ public:
         flowers->setText(QCoreApplication::translate("MainWindow", "\320\221\321\203\320\272\320\265\321\202\321\213", nullptr));
         clients->setText(QCoreApplication::translate("MainWindow", "\320\232\320\273\320\270\320\265\320\275\321\202\321\213", nullptr));
         stats->setText(QCoreApplication::translate("MainWindow", "\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "\320\272\320\275\320\276\320\277\320\272\320\260 \320\275\320\270\320\272\320\270\321\202\321\213", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "page1", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "page2", nullptr));

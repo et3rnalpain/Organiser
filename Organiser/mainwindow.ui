@@ -936,7 +936,7 @@ padding-top: 1px;
           <number>0</number>
          </property>
          <widget class="QWidget" name="page_4">
-          <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
             <widget class="QScrollArea" name="scrollArea">
              <property name="widgetResizable">
@@ -947,8 +947,8 @@ padding-top: 1px;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>670</width>
-                <height>576</height>
+                <width>704</width>
+                <height>552</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="bouqetContentLayout">
@@ -971,6 +971,79 @@ padding-top: 1px;
               </layout>
              </widget>
             </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_3">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton
+{
+float: center;
+border: 0;
+background: #30343f;
+color:#fafaff;
+}</string>
+               </property>
+               <property name="text">
+                <string>Добавить</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_4">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton
+{
+float: center;
+border: 0;
+background: #30343f;
+color:#fafaff;
+}</string>
+               </property>
+               <property name="text">
+                <string>Удалить</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
