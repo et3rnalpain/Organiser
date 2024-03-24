@@ -148,7 +148,7 @@ void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flpri
     frame->setMaximumSize(QSize(10000, 50));
     frame->setStyleSheet(QString::fromUtf8(
         "QFrame {border: solid; border-width: 2px;background-color: #30343f;border-color: #30343f;border-radius: 4px;}\n"
-        "QLabel {background-color: #fafaff; font-size: 16px; color: #30343f}"));
+        "QLabel {background-color: #30343f; font-size: 16px; color: #fafaff}"));
     QHBoxLayout* hframelayout = new QHBoxLayout(frame);
     hframelayout->setObjectName("hfamelayout" + QString::number(rowNum));
     QLabel* bouqetName = new QLabel(frame);
