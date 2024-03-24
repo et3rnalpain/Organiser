@@ -541,7 +541,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 704, 580));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 670, 576));
         bouqetContentLayout = new QVBoxLayout(scrollAreaWidgetContents_2);
         bouqetContentLayout->setSpacing(6);
         bouqetContentLayout->setObjectName("bouqetContentLayout");
@@ -632,7 +632,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Flower", nullptr));
         openmenu->setText(QString());
         inventory_2->setText(QString());
         flowers_2->setText(QString());
