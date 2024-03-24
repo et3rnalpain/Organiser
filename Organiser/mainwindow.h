@@ -6,6 +6,7 @@
 #include <QSqlError>
 #include <QSqlTableModel>
 #include <QSqlQuery>
+#include <QSqlQueryModel>
 #include <QSqlRecord>
 
 #include <QtCharts/QChartView>
@@ -62,8 +63,6 @@ private slots:
     void on_info_clicked(const QModelIndex &index);
 
     void on_but_DelFlower_clicked();
-
-    void on_pie_chart_sex_customContextMenuRequested(const QPoint &pos);
 
 private:
     Ui::MainWindow *ui;

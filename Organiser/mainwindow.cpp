@@ -36,12 +36,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::createPieChart()
 {
-    /*QSqlQuery query;
+    QSqlQuery query;
 
     int male_count = 1, female_count = 1;;
 
     if (query.exec("SELECT count(*) FROM clients WHERE Sex = 'муж'"))
     {
+        query.next();
         male_count = query.value(0).toInt();
     }
     else {
@@ -50,19 +51,20 @@ void MainWindow::createPieChart()
 
     if (query.exec("SELECT count(*) FROM clients WHERE Sex = 'жен'"))
     {
+        query.next();
         female_count = query.value(0).toInt();
     }
     else {
         female_count = 1;
     }
 
-    int total_count = male_count + female_count;*/
+    int total_count = male_count + female_count;
 
-    int male_count = 10, female_count = 15, total_count = male_count + female_count;
+    //int male_count = 10, female_count = 15, total_count = male_count + female_count;
 
     QPieSeries* series = new QPieSeries();
-    series->append("Женщины", female_count/(total_count * 1.0f) * 100);
-    series->append("Мужчины", male_count/(total_count * 1.0f) * 100);
+    series->append("Женщины", female_count/(total_count * 1.0f));
+    series->append("Мужчины", male_count/(total_count * 1.0f));
 
     QPieSlice* slice_male = series->slices().at(0);
     QPieSlice* slice_female = series->slices().at(1);
