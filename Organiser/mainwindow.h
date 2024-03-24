@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void createNewBouqetWidget(int rowNum);
+    void createNewBouqetWidget(int rowNum, QString flname, QString flprice);
 
 private slots:
 

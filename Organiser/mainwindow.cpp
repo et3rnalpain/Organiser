@@ -16,12 +16,13 @@ MainWindow::MainWindow(QWidget *parent)
         model->select();
         this->ui->info->setModel(model);
     }
-    this->createNewBouqetWidget(0);
-    this->createNewBouqetWidget(0);
-    this->createNewBouqetWidget(0);
-    this->createNewBouqetWidget(0);
-    this->createNewBouqetWidget(0);
-    this->createNewBouqetWidget(0);
+    for(int i = 0; i < model->rowCount();i++)
+    {
+        QString n = model->index(i,1).data().toString();
+        QString p = model->index(i,2).data().toString();
+        createNewBouqetWidget(i,n,p);
+    }
+
 }
 
 MainWindow::~MainWindow()
@@ -29,7 +30,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::createNewBouqetWidget(int rowNum)
+void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flprice)
 {
     QFrame* frame = new QFrame();
     QString name = "bouqet" + QString::number(rowNum);// + "_" + QString::number(colNum);
@@ -46,7 +47,7 @@ void MainWindow::createNewBouqetWidget(int rowNum)
     hframelayout->setObjectName("hfamelayout" + QString::number(rowNum));
     QLabel* bouqetName = new QLabel(frame);
     bouqetName->setObjectName("bouqetName" + QString::number(rowNum));
-    bouqetName->setText("Говнище");
+    bouqetName->setText(flname);
     hframelayout->insertWidget(0,bouqetName,0);
 
     QLabel* consistof = new QLabel(frame);
@@ -60,9 +61,9 @@ void MainWindow::createNewBouqetWidget(int rowNum)
 
     QLabel* price = new QLabel(frame);
     price->setObjectName("price" + QString::number(rowNum));
-    price->setText("1000R");
+    price->setText(flprice);
     hframelayout->insertWidget(3,price,0);
-    ui->bouqetContentLayout->insertWidget(0,frame,0,Qt::AlignTop);
+    ui->bouqetContentLayout->insertWidget(rowNum,frame,0,Qt::AlignTop);
 }
 
 
