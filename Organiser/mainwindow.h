@@ -69,6 +69,7 @@ private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
     QSqlTableModel* model;
+    QSqlTableModel* model2;
     int currentRowFlower;
 };
 #endif // MAINWINDOW_H

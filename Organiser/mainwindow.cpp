@@ -20,11 +20,16 @@ MainWindow::MainWindow(QWidget *parent)
         //this->ui->info->setEditTriggers(QAbstractItemView::NoEditTriggers);
         this->ui->info->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     }
-    for(int i = 0; i < model->rowCount();i++)
+    QSqlQuery query;
+    query.exec("SELECT bouqets.Name, consistof.b_id, sum(f_ammount * flowers.Price) FROM bouqets JOIN consistof ON consistof.b_id = bouqets.id JOIN flowers ON consistof.f_id = flowers.id GROUP BY consistof.b_id");
+    int currec = 1;
+
+    while(query.next())
     {
-        QString n = model->index(i,1).data().toString();
-        QString p = model->index(i,2).data().toString();
-        createNewBouqetWidget(i,n,p);
+        QString n = query.value(0).toString();
+        QString p = query.value(2).toString();
+        createNewBouqetWidget(currec-1,n,p);
+        currec++;
     }
     createPieChart();
 }
