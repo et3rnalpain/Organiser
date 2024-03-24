@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>891</width>
+    <width>902</width>
     <height>600</height>
    </rect>
   </property>
@@ -947,7 +947,7 @@ padding-top: 1px;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>693</width>
+                <width>704</width>
                 <height>580</height>
                </rect>
               </property>
@@ -955,68 +955,6 @@ padding-top: 1px;
                <property name="spacing">
                 <number>6</number>
                </property>
-               <item>
-                <widget class="QFrame" name="frame">
-                 <property name="minimumSize">
-                  <size>
-                   <width>100</width>
-                   <height>50</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>10000</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_7">
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_6">
-                    <item>
-                     <widget class="QLabel" name="bouqetName">
-                      <property name="text">
-                       <string>Name</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="consistof">
-                      <property name="text">
-                       <string>Consistof</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="horizontalSpacer">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>40</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="price">
-                      <property name="text">
-                       <string>price</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
                <item>
                 <spacer name="verticalSpacer_3">
                  <property name="orientation">

@@ -19,6 +19,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->createNewBouqetWidget(0);
     this->createNewBouqetWidget(0);
     this->createNewBouqetWidget(0);
+    this->createNewBouqetWidget(0);
+    this->createNewBouqetWidget(0);
+    this->createNewBouqetWidget(0);
 }
 
 MainWindow::~MainWindow()
@@ -33,31 +36,32 @@ void MainWindow::createNewBouqetWidget(int rowNum)
     frame->setObjectName(name);
     frame->setMinimumSize(QSize(500, 50));
     frame->setMaximumSize(QSize(10000, 50));
-    frame->setStyleSheet(QString::fromUtf8("border: solid;\n"
-                                                  "border-width: 2px;\n"
-                                                  "background-color: rgb(250, 250, 255);\n"
-                                                  "border-color: #30343f;\n"
-                                           "border-radius: 4px;"));
-    QHBoxLayout* hframelayout = new QHBoxLayout();
+    frame->setStyleSheet(QString::fromUtf8(
+        "border: solid;\n"
+        "border-width: 2px;\n"
+        "background-color: rgb(250, 250, 255);\n"
+        "border-color: #30343f;\n"
+        "border-radius: 4px;\n"));
+    QHBoxLayout* hframelayout = new QHBoxLayout(frame);
     hframelayout->setObjectName("hfamelayout" + QString::number(rowNum));
     QLabel* bouqetName = new QLabel(frame);
     bouqetName->setObjectName("bouqetName" + QString::number(rowNum));
-    bouqetName->setText("Govno");
-    hframelayout->addWidget(bouqetName);
+    bouqetName->setText("Говнище");
+    hframelayout->insertWidget(0,bouqetName,0);
 
     QLabel* consistof = new QLabel(frame);
     consistof->setObjectName("consistof" + QString::number(rowNum));
+    consistof->setText("Состоит из говна");
+    hframelayout->insertWidget(1,consistof,0);
 
-    hframelayout->addWidget(consistof);
+    QSpacerItem* hSpacer = new QSpacerItem(600, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-    QSpacerItem* hSpacer = new QSpacerItem(400, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-    hframelayout->addItem(hSpacer);
+    hframelayout->insertSpacerItem(2,hSpacer);
 
     QLabel* price = new QLabel(frame);
     price->setObjectName("price" + QString::number(rowNum));
     price->setText("1000R");
-    hframelayout->addWidget(price);
+    hframelayout->insertWidget(3,price,0);
     ui->bouqetContentLayout->insertWidget(0,frame,0,Qt::AlignTop);
 }
 

@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -60,13 +59,6 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *bouqetContentLayout;
-    QFrame *frame;
-    QHBoxLayout *horizontalLayout_7;
-    QHBoxLayout *horizontalLayout_6;
-    QLabel *bouqetName;
-    QLabel *consistof;
-    QSpacerItem *horizontalSpacer;
-    QLabel *price;
     QSpacerItem *verticalSpacer_3;
     QWidget *page_3;
     QHBoxLayout *horizontalLayout_4;
@@ -85,7 +77,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->setEnabled(true);
-        MainWindow->resize(891, 600);
+        MainWindow->resize(902, 600);
         MainWindow->setMinimumSize(QSize(800, 600));
         MainWindow->setMaximumSize(QSize(1920, 1080));
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: #eaeaea;"));
@@ -549,45 +541,10 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 693, 580));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 704, 580));
         bouqetContentLayout = new QVBoxLayout(scrollAreaWidgetContents_2);
         bouqetContentLayout->setSpacing(6);
         bouqetContentLayout->setObjectName("bouqetContentLayout");
-        frame = new QFrame(scrollAreaWidgetContents_2);
-        frame->setObjectName("frame");
-        frame->setMinimumSize(QSize(100, 50));
-        frame->setMaximumSize(QSize(10000, 16777215));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        horizontalLayout_7 = new QHBoxLayout(frame);
-        horizontalLayout_7->setObjectName("horizontalLayout_7");
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setObjectName("horizontalLayout_6");
-        bouqetName = new QLabel(frame);
-        bouqetName->setObjectName("bouqetName");
-
-        horizontalLayout_6->addWidget(bouqetName);
-
-        consistof = new QLabel(frame);
-        consistof->setObjectName("consistof");
-
-        horizontalLayout_6->addWidget(consistof);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_6->addItem(horizontalSpacer);
-
-        price = new QLabel(frame);
-        price->setObjectName("price");
-
-        horizontalLayout_6->addWidget(price);
-
-
-        horizontalLayout_7->addLayout(horizontalLayout_6);
-
-
-        bouqetContentLayout->addWidget(frame);
-
         verticalSpacer_3 = new QSpacerItem(20, 1000, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         bouqetContentLayout->addItem(verticalSpacer_3);
@@ -686,9 +643,6 @@ public:
         flowers->setText(QCoreApplication::translate("MainWindow", "\320\221\321\203\320\272\320\265\321\202\321\213", nullptr));
         clients->setText(QCoreApplication::translate("MainWindow", "\320\232\320\273\320\270\320\265\320\275\321\202\321\213", nullptr));
         stats->setText(QCoreApplication::translate("MainWindow", "\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260", nullptr));
-        bouqetName->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
-        consistof->setText(QCoreApplication::translate("MainWindow", "Consistof", nullptr));
-        price->setText(QCoreApplication::translate("MainWindow", "price", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "\320\272\320\275\320\276\320\277\320\272\320\260 \320\275\320\270\320\272\320\270\321\202\321\213", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "page1", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "page2", nullptr));
