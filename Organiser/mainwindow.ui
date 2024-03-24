@@ -933,12 +933,15 @@ padding-top: 1px;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="page_4">
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
             <widget class="QScrollArea" name="scrollArea">
+             <property name="styleSheet">
+              <string notr="true">border: none;</string>
+             </property>
              <property name="widgetResizable">
               <bool>true</bool>
              </property>
@@ -947,8 +950,8 @@ padding-top: 1px;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>63</width>
-                <height>18</height>
+                <width>706</width>
+                <height>554</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="bouqetContentLayout">
@@ -1049,8 +1052,32 @@ color:#fafaff;
          </widget>
          <widget class="QWidget" name="page_3">
           <layout class="QGridLayout" name="gridLayout_2">
+           <property name="leftMargin">
+            <number>9</number>
+           </property>
+           <property name="topMargin">
+            <number>9</number>
+           </property>
+           <property name="rightMargin">
+            <number>9</number>
+           </property>
+           <property name="bottomMargin">
+            <number>9</number>
+           </property>
            <item row="0" column="0">
             <layout class="QVBoxLayout" name="verticalLayout_7">
+             <property name="leftMargin">
+              <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>9</number>
+             </property>
              <item>
               <widget class="QTableView" name="info">
                <property name="sizePolicy">
@@ -1059,13 +1086,20 @@ color:#fafaff;
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="font">
+                <font>
+                 <family>Bahnschrift</family>
+                 <pointsize>-1</pointsize>
+                </font>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QTableView {
-         Color: #30343f;
-         Background-color: #fafaff;
-         Selection-color: #fafaff;
-         Selection-background-color: #30343f;
-    border: 2px groove gray;
+         color: #30343f;
+	font-size: 13px;
+         background-color: #fafaff;
+         selection-color: #fafaff;
+         selection-background-color: #30343f;
+    /*border: 2px groove gray;*/
     border-radius: 0px;
     padding: 2px 4px;
 }
@@ -1074,16 +1108,32 @@ QTableView QTableCornerButton::section {
  }
 QHeaderView::section {
     color:  #fafaff;
+	font-size: 13px;
     background-color:  #30343f;
     border: 5px solid #30343f;
     border-radius:0px;
     border-color:  #30343f;
 } </string>
                </property>
+               <property name="gridStyle">
+                <enum>Qt::SolidLine</enum>
+               </property>
               </widget>
              </item>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <property name="leftMargin">
+                <number>9</number>
+               </property>
+               <property name="topMargin">
+                <number>9</number>
+               </property>
+               <property name="rightMargin">
+                <number>9</number>
+               </property>
+               <property name="bottomMargin">
+                <number>9</number>
+               </property>
                <item>
                 <spacer name="horizontalSpacer_2">
                  <property name="orientation">
