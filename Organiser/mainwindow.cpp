@@ -15,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent)
         model->setTable("flowers");
         model->select();
         this->ui->info->setModel(model);
+        this->ui->info->setColumnHidden(0, true);
+        //this->ui->info->verticalHeader()->setVisible(false);
+        //this->ui->info->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        this->ui->info->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     }
     for(int i = 0; i < model->rowCount();i++)
     {
@@ -175,5 +179,25 @@ void MainWindow::on_clients_2_clicked()
 void MainWindow::on_stats_2_clicked()
 {
     ui->contentWidget->setCurrentIndex(3);
+}
+
+
+void MainWindow::on_but_AddFlower_clicked()
+{
+    model->insertRow(model->rowCount());
+}
+
+
+void MainWindow::on_info_clicked(const QModelIndex &index)
+{
+    this->currentRowFlower = index.row();
+}
+
+
+void MainWindow::on_but_DelFlower_clicked()
+{
+    model->removeRow(this->currentRowFlower);
+    this->currentRowFlower = -1;
+    model->select();
 }
 

@@ -57,11 +57,18 @@ private slots:
 
     void on_stats_2_clicked();
 
+    void on_but_AddFlower_clicked();
+
+    void on_info_clicked(const QModelIndex &index);
+
+    void on_but_DelFlower_clicked();
+
     void on_pie_chart_sex_customContextMenuRequested(const QPoint &pos);
 
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
     QSqlTableModel* model;
+    int currentRowFlower;
 };
 #endif // MAINWINDOW_H
