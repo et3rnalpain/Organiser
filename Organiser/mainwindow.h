@@ -44,6 +44,7 @@ public:
     void createPieChart();
     void createBarChartBouqets();
     void createBarChartOrders();
+    void createNewFlowerBouqetConnection();
 
 private slots:
 
@@ -76,6 +77,8 @@ private slots:
     void on_orders_clicked();
 
     void on_orders_2_clicked();
+
+    void onAddClicked();
 
 private:
     Ui::MainWindow *ui;

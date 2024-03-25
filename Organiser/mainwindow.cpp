@@ -73,9 +73,13 @@ MainWindow::MainWindow(QWidget *parent)
         createNewOrderWidget(currec-1, id_, date_, b_name, fio_, price_);
         currec++;
     }
+
+    QSqlQuery q;q.exec("SELECT Name FROM flowers");
+    while(q.next()) ui->flowersComboBox->addItem(q.value(0).toString());
     createPieChart();
     createBarChartBouqets();
     createBarChartOrders();
+    createNewFlowerBouqetConnection();
 }
 
 MainWindow::~MainWindow()
@@ -356,7 +360,41 @@ void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flpri
     ui->bouqetContentLayout->insertWidget(rowNum,frame,0,Qt::AlignTop);
 }
 
+void MainWindow::createNewFlowerBouqetConnection()
+{
+    QFrame* exmpl = new QFrame(ui->frame_3);
+    exmpl->setObjectName("exmpl");
+    exmpl->setFrameShape(QFrame::StyledPanel);
+    exmpl->setFrameShadow(QFrame::Raised);
+    QHBoxLayout* el = new QHBoxLayout(exmpl);
+    el->setObjectName("el");
+    QComboBox* comboBox = new QComboBox(exmpl);
+    comboBox->setObjectName("flowersComboBox");
+    comboBox->setMinimumSize(QSize(100, 20));
+    comboBox->setMaximumSize(QSize(16777215, 20));
+    comboBox->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    QSqlQuery query;query.exec("SELECT Name FROM flowers");
+    while(query.next()) comboBox->addItem(query.value(0).toString());
+    el->addWidget(comboBox);
 
+    QSpinBox* spinBox = new QSpinBox(exmpl);
+    spinBox->setObjectName("spinBox");
+    spinBox->setMinimumSize(QSize(50, 20));
+    spinBox->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    spinBox->setMinimum(1);
+    el->addWidget(spinBox);
+
+    QPushButton* pb = new QPushButton(exmpl);
+    pb->setObjectName("pushButton");
+    pb->setMinimumSize(QSize(0, 0));
+    pb->setMaximumSize(QSize(20, 20));
+    connect(pb,&QPushButton::clicked,this,&MainWindow::onAddClicked);
+
+    el->addWidget(pb);
+
+
+    ui->addF->addWidget(exmpl);
+}
 
 void MainWindow::on_closemenu_clicked()
 {
@@ -447,4 +485,10 @@ void MainWindow::on_orders_2_clicked()
 {
     ui->contentWidget->setCurrentIndex(4);
 }
+
+void MainWindow::onAddClicked()
+{
+    createNewFlowerBouqetConnection();
+}
+
 
