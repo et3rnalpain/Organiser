@@ -38,8 +38,25 @@ MainWindow::MainWindow(QWidget *parent)
         createNewBouqetWidget(currec-1,n,p, c);
         currec++;
     }
+
+    QSqlQuery query2;
+    query2.exec("SELECT clients.LastName, clients.FirstName, clients.MiddleName, clients.Sex, clients.BirthDate FROM clients");
+    currec = 1;
+
+    while(query2.next())
+    {
+        QString l_name = query2.value(0).toString();
+        QString f_name = query2.value(1).toString();
+        QString m_name = query2.value(2).toString();
+        QString sex_ = query2.value(3).toString();
+        QString age_ = query2.value(4).toString();
+        createNewClientWidget(currec-1, l_name, f_name, m_name, sex_, age_);
+        currec++;
+    }
+
     createPieChart();
-    createBarChart();
+    createBarChartBouqets();
+    createBarChartOrders();
 }
 
 MainWindow::~MainWindow()
@@ -47,7 +64,102 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::createBarChart()
+void MainWindow::createNewClientWidget(int rowNum, QString s_name, QString f_name, QString m_name, QString sex_, QString age_)
+{
+    QFrame* frame = new QFrame();
+    QString name = "client" + QString::number(rowNum);// + "_" + QString::number(colNum);
+    frame->setObjectName(name);
+    frame->setMinimumSize(QSize(500, 50));
+    frame->setMaximumSize(QSize(10000, 50));
+    frame->setStyleSheet(QString::fromUtf8(
+        "QFrame {border: solid; border-width: 2px;background-color: #30343f;border-color: #30343f;border-radius: 4px;}\n"
+        "QLabel {background-color: #30343f; font-size: 16px; color: #fafaff}"));
+    QHBoxLayout* hframelayout = new QHBoxLayout(frame);
+    hframelayout->setObjectName("hfamelayout_client" + QString::number(rowNum));
+
+    QLabel* first_name = new QLabel(frame);
+    QLabel* second_name = new QLabel(frame);
+    QLabel* middle_name = new QLabel(frame);
+    QLabel* sex = new QLabel(frame);
+    QLabel* age = new QLabel(frame);
+
+    second_name->setObjectName("s_name" + QString::number(rowNum));
+    second_name->setText(s_name);
+    second_name->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    hframelayout->insertWidget(0,second_name,0);
+
+    first_name->setObjectName("f_name" + QString::number(rowNum));
+    first_name->setText(f_name);
+    first_name->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    hframelayout->insertWidget(1,first_name,0);
+
+    middle_name->setObjectName("m_name" + QString::number(rowNum));
+    middle_name->setText(m_name);
+    middle_name->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    hframelayout->insertWidget(2,middle_name,0);
+
+    sex->setObjectName("sex" + QString::number(rowNum));
+    sex->setText(sex_);
+    sex->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    hframelayout->insertWidget(3,sex,0);
+
+    age->setObjectName("sex" + QString::number(rowNum));
+    age->setText(age_);
+    age->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    hframelayout->insertWidget(4,age,0);
+
+    ui->verticalLayout_8->insertWidget(rowNum,frame,0,Qt::AlignTop);
+}
+
+void MainWindow::createBarChartOrders()
+{
+    QSqlQuery query;
+    query.exec("SELECT date, COUNT(date) FROM orders GROUP BY date");
+    int current_row = 1;
+
+    int size = 1;
+
+    if(query.last())
+    {
+        size =  query.at() + 1;
+        query.first();
+        query.previous();
+    }
+
+    QBarSeries* series = new QBarSeries();
+    QBarSet** set = new QBarSet*[size];
+    QStringList categories;
+    while (query.next()){
+        set[current_row - 1] = new QBarSet(query.value(0).toString());
+        *set[current_row - 1] << query.value(1).toInt();
+        categories << query.value(0).toString();
+        series->append(set[current_row - 1]);
+    }
+
+    QChart* chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle("Количество заказов по датам");
+
+    QBarCategoryAxis *axis = new QBarCategoryAxis();
+    axis->append(categories);
+    chart->createDefaultAxes();
+    //chart->setAxisX(axis, series);
+    //chart->setAxisY(axis, categories);
+
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+
+    QChartView* chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setVisible(true);
+    chartView->setMinimumSize(1000,400);
+
+    ui->gridLayout_3->addWidget(chartView,1,0);
+
+    delete[] set;
+}
+
+void MainWindow::createBarChartBouqets()
 {
     QSqlQuery query;
     query.exec("SELECT bouqets.Name, COUNT(bouquete_id) FROM orders JOIN bouqets ON orders.bouquete_id = bouqets.id JOIN clients ON orders.client_id = clients.id GROUP BY bouquete_id");
@@ -80,9 +192,9 @@ void MainWindow::createBarChart()
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
     chartView->setVisible(true);
-    chartView->setMaximumSize(400,400);
+    chartView->setMinimumSize(400,400);
 
-    ui->gridLayout_3->addWidget(chartView,0,1);
+    ui->gridLayout_3->addWidget(chartView,0,0);
 
     delete[] set;
 }
@@ -134,9 +246,9 @@ void MainWindow::createPieChart()
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
 
-    chartView->setMaximumSize(400,400);
+    chartView->setMinimumSize(400,400);
 
-    ui->gridLayout_3->addWidget(chartView,0,0);
+    ui->gridLayout_3->addWidget(chartView,0,1);
 }
 
 void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flprice, QString consist)

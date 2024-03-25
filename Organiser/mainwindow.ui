@@ -933,7 +933,7 @@ padding-top: 1px;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="page_4">
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1209,26 +1209,35 @@ color:#fafaff;
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_sklad">
+         <widget class="QWidget" name="page_1">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="text">
-              <string>кнопка никиты</string>
+            <widget class="QScrollArea" name="scrollArea_2">
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label">
-             <property name="styleSheet">
-              <string notr="true">background-color:#;</string>
-             </property>
-             <property name="text">
-              <string>page1</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>704</width>
+                <height>580</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <item>
+                <widget class="QFrame" name="frame">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>
@@ -1236,28 +1245,32 @@ color:#fafaff;
          <widget class="QWidget" name="page_2">
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QWidget" name="pie_chart_widget" native="true">
-             <property name="maximumSize">
-              <size>
-               <width>1000</width>
-               <height>1000</height>
-              </size>
+            <widget class="QScrollArea" name="scrollArea_3">
+             <property name="widgetResizable">
+              <bool>true</bool>
              </property>
-             <layout class="QGridLayout" name="gridLayout_3">
-              <item row="0" column="0">
-               <spacer name="horizontalSpacer_2">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
+             <widget class="QWidget" name="scrollAreaWidgetContents_3">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>704</width>
+                <height>580</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QFrame" name="frame_2">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </widget>
            </item>
           </layout>

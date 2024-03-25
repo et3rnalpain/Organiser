@@ -23,6 +23,8 @@
 #include <QVector>
 #include <QList>
 
+#include <QLabel>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -37,8 +39,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void createNewBouqetWidget(int rowNum, QString flname, QString flprice, QString consist);
+    void createNewClientWidget(int rowNum, QString s_name, QString f_name, QString m_name, QString sex, QString age);
     void createPieChart();
-    void createBarChart();
+    void createBarChartBouqets();
+    void createBarChartOrders();
 
 private slots:
 
