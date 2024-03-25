@@ -16,6 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
         model->select();
         this->ui->info->setModel(model);
         this->ui->info->setColumnHidden(0, true);
+        model->setHeaderData(1, Qt::Horizontal, "Название");
+        model->setHeaderData(2, Qt::Horizontal, "Цена (руб)");
+        model->setHeaderData(3, Qt::Horizontal, "Количество (шт)");
         //this->ui->info->verticalHeader()->setVisible(false);
         //this->ui->info->setEditTriggers(QAbstractItemView::NoEditTriggers);
         this->ui->info->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -306,6 +309,7 @@ void MainWindow::on_openmenu_clicked()
 
 void MainWindow::on_inventory_clicked()
 {
+    model->select();
     ui->contentWidget->setCurrentIndex(1);
 }
 
