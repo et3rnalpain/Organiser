@@ -187,33 +187,28 @@ void MainWindow::createBarChartOrders()
     query.exec("SELECT date, COUNT(date) FROM orders GROUP BY date");
     int current_row = 1;
 
-    int size = 1;
-
-    if(query.last())
-    {
-        size =  query.at() + 1;
-        query.first();
-        query.previous();
-    }
-
     QLineSeries* series = new QLineSeries();
-    QCategoryAxis *axis = new QCategoryAxis();
+    QCategoryAxis *axisX = new QCategoryAxis();
+    QValueAxis *axisY = new QValueAxis();
 
+    int max = 0;
     while (query.next())
     {
         series->append(current_row-1, query.value(1).toInt());
-        axis->append(query.value(0).toString(),current_row-1);
+        axisX->append(query.value(0).toString(),current_row-1);
         current_row++;
+        if (query.value(1).toInt() > max)
+            max = query.value(1).toInt();
     }
 
     QChart* chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("Количество заказов по датам");
 
-    //axis->append(categories);
     chart->createDefaultAxes();
-    chart->setAxisX(axis, series);
-    //chart->setAxisY(axis, categories);
+    chart->setAxisX(axisX, series);
+    chart->setAxisY(axisY, series);
+    axisY->setRange(0, max);
 
     chart->legend()->setVisible(false);
     chart->legend()->setAlignment(Qt::AlignBottom);
@@ -242,6 +237,7 @@ void MainWindow::createBarChartBouqets()
         query.previous();
     }
 
+    int max = 0;
     QBarSeries* series = new QBarSeries();
     QBarSet** set = new QBarSet*[size];
     while (query.next()){
@@ -249,6 +245,8 @@ void MainWindow::createBarChartBouqets()
         *set[current_row - 1] << query.value(1).toInt();
         series->append(set[current_row - 1]);
         current_row++;
+        if (query.value(1).toInt() > max)
+            max = query.value(1).toInt();
     }
 
     QChart* chart = new QChart();
@@ -257,6 +255,10 @@ void MainWindow::createBarChartBouqets()
     chart->legend()->setVisible(true);
     chart->legend()->setAlignment(Qt::AlignBottom);
     chart->setAnimationOptions(QChart::AllAnimations);
+
+    QValueAxis *axisY = new QValueAxis();
+    chart->setAxisY(axisY, series);
+    axisY->setRange(0, max);
 
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
