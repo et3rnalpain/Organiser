@@ -1368,7 +1368,26 @@ color:#fafaff;
          <widget class="QWidget" name="page_5">
           <layout class="QGridLayout" name="gridLayout_8">
            <item row="0" column="0">
-            <layout class="QGridLayout" name="gridLayout_7"/>
+            <widget class="QScrollArea" name="scrollArea_4">
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents_4">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>704</width>
+                <height>580</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_5">
+               <item row="0" column="0">
+                <layout class="QGridLayout" name="gridLayout_4"/>
+               </item>
+              </layout>
+             </widget>
+            </widget>
            </item>
           </layout>
          </widget>
