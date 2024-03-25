@@ -59,17 +59,18 @@ MainWindow::MainWindow(QWidget *parent)
         currec++;
     }
 
-    query.exec("SELECT orders.date, bouqets.Name, clients.LastName, bouqets.Price FROM orders JOIN bouqets ON bouqets.id = orders.bouquete_id JOIN clients ON clients.id = orders.client_id");
+    query.exec("SELECT orders.id, orders.date, bouqets.Name, clients.LastName, bouqets.Price, clients.FirstName, clients.MiddleName FROM orders JOIN bouqets ON bouqets.id = orders.bouquete_id JOIN clients ON clients.id = orders.client_id");
     currec = 1;
 
     while(query.next())
     {
-        QString date_ = query.value(0).toString();
-        QString b_name = query.value(1).toString();
-        QString fio_ = query.value(2).toString();
-        QString price_ = query.value(3).toString();
+        QString id_ = "Заказ ID: " + query.value(0).toString();
+        QString date_ = "Когда: " + query.value(1).toString();
+        QString b_name = "Букет: " + query.value(2).toString();
+        QString fio_ = query.value(3).toString() + " " + query.value(5).toString()[0] + ". " + query.value(6).toString()[0] + ".";
+        QString price_ = "Цена: " + query.value(4).toString() + "₽";
 
-        createNewOrderWidget(currec-1, date_, b_name, fio_, price_);
+        createNewOrderWidget(currec-1, id_, date_, b_name, fio_, price_);
         currec++;
     }
     createPieChart();
@@ -82,7 +83,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::createNewOrderWidget(int rowNum, QString data_, QString b_name, QString client_fio, QString price_)
+void MainWindow::createNewOrderWidget(int rowNum, QString id_, QString data_, QString b_name, QString client_fio, QString price_)
 {
     QFrame* frame = new QFrame();
     QString name = "order" + QString::number(rowNum);// + "_" + QString::number(colNum);
@@ -95,30 +96,36 @@ void MainWindow::createNewOrderWidget(int rowNum, QString data_, QString b_name,
     QVBoxLayout* hframelayout = new QVBoxLayout(frame);
     hframelayout->setObjectName("hfamelayout_order" + QString::number(rowNum));
 
+    QLabel* id = new QLabel(frame);
     QLabel* data = new QLabel(frame);
     QLabel* bouqete_name = new QLabel(frame);
     QLabel* fio = new QLabel(frame);
     QLabel* price = new QLabel(frame);
 
-    data->setObjectName("s_name" + QString::number(rowNum));
+    id->setObjectName("id_order" + QString::number(rowNum));
+    id->setText(id_);
+    id->setFont(QFont(QString::fromUtf8("Bahnschrift")));
+    hframelayout->insertWidget(0,id,0);
+
+    data->setObjectName("data_order" + QString::number(rowNum));
     data->setText(data_);
     data->setFont(QFont(QString::fromUtf8("Bahnschrift")));
-    hframelayout->insertWidget(0,data,0);
+    hframelayout->insertWidget(1,data,0);
 
-    bouqete_name->setObjectName("f_name" + QString::number(rowNum));
+    bouqete_name->setObjectName("b_name_order" + QString::number(rowNum));
     bouqete_name->setText(b_name);
     bouqete_name->setFont(QFont(QString::fromUtf8("Bahnschrift")));
-    hframelayout->insertWidget(1,bouqete_name,0);
+    hframelayout->insertWidget(2,bouqete_name,0);
 
-    fio->setObjectName("m_name" + QString::number(rowNum));
+    fio->setObjectName("fio_order" + QString::number(rowNum));
     fio->setText(client_fio);
     fio->setFont(QFont(QString::fromUtf8("Bahnschrift")));
-    hframelayout->insertWidget(2,fio,0);
+    hframelayout->insertWidget(3,fio,0);
 
-    price->setObjectName("sex" + QString::number(rowNum));
+    price->setObjectName("price_order" + QString::number(rowNum));
     price->setText(price_);
     price->setFont(QFont(QString::fromUtf8("Bahnschrift")));
-    hframelayout->insertWidget(3,price,0);
+    hframelayout->insertWidget(4,price,0);
 
     ui->gridLayout_4->addWidget(frame,rowNum - rowNum % 3, rowNum % 3);
 }
