@@ -1071,7 +1071,7 @@ padding-top: 1px;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="page_4">
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1344,8 +1344,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>63</width>
-                <height>28</height>
+                <width>704</width>
+                <height>580</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
@@ -1377,8 +1377,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>704</width>
-                <height>580</height>
+                <width>63</width>
+                <height>20</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_5">
