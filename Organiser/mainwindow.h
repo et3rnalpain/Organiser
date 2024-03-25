@@ -40,6 +40,7 @@ public:
     ~MainWindow();
     void createNewBouqetWidget(int rowNum, QString flname, QString flprice, QString consist);
     void createNewClientWidget(int rowNum, QString s_name, QString f_name, QString m_name, QString sex, QString age);
+    void createNewOrderWidget(int rowNum, QString data, QString b_name, QString client_fio, QString price);
     void createPieChart();
     void createBarChartBouqets();
     void createBarChartOrders();
@@ -71,6 +72,10 @@ private slots:
     void on_info_clicked(const QModelIndex &index);
 
     void on_but_DelFlower_clicked();
+
+    void on_orders_clicked();
+
+    void on_orders_2_clicked();
 
 private:
     Ui::MainWindow *ui;

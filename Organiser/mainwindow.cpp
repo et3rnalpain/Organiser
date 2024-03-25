@@ -155,8 +155,6 @@ void MainWindow::createBarChartOrders()
     chartView->setMinimumSize(1000,400);
 
     ui->gridLayout_3->addWidget(chartView,1,0);
-
-    //delete[] set;
 }
 
 void MainWindow::createBarChartBouqets()
@@ -180,6 +178,7 @@ void MainWindow::createBarChartBouqets()
         set[current_row - 1] = new QBarSet(query.value(0).toString());
         *set[current_row - 1] << query.value(1).toInt();
         series->append(set[current_row - 1]);
+        current_row++;
     }
 
     QChart* chart = new QChart();
@@ -370,5 +369,15 @@ void MainWindow::on_but_DelFlower_clicked()
     model->removeRow(this->currentRowFlower);
     this->currentRowFlower = -1;
     model->select();
+}
+
+void MainWindow::on_orders_clicked()
+{
+    ui->contentWidget->setCurrentIndex(4);
+}
+
+void MainWindow::on_orders_2_clicked()
+{
+    ui->contentWidget->setCurrentIndex(4);
 }
 
