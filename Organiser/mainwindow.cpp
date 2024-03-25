@@ -145,8 +145,9 @@ void MainWindow::createBarChartOrders()
     chart->setAxisX(axis, series);
     //chart->setAxisY(axis, categories);
 
-    chart->legend()->setVisible(true);
+    chart->legend()->setVisible(false);
     chart->legend()->setAlignment(Qt::AlignBottom);
+    chart->setAnimationOptions(QChart::AllAnimations);
 
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
@@ -184,9 +185,9 @@ void MainWindow::createBarChartBouqets()
     QChart* chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("Какой букет покупают чаще всего?");
-    //chart->createDefaultAxes();
-    //chart->setAxisX(series);
     chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+    chart->setAnimationOptions(QChart::AllAnimations);
 
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
@@ -242,6 +243,10 @@ void MainWindow::createPieChart()
     QChart* chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("Мужчины/женщины");
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+    chart->setAnimationOptions(QChart::AllAnimations);
+
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
 
