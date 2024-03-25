@@ -12,5 +12,7 @@
         <file>icons/omenu2.png</file>
         <file>icons/sklad2.png</file>
         <file>icons/stats2.png</file>
+        <file>icons/orders.png</file>
+        <file>icons/orders2.png</file>
     </qresource>
 </RCC>
