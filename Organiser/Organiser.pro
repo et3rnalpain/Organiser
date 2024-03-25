@@ -17,7 +17,7 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-win32:RC_ICONS += icons/icon1.ico
+# win32:RC_ICONS += icons/icon1.ico
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
