@@ -30,14 +30,17 @@ MainWindow::MainWindow(QWidget *parent)
     while(query.next())
     {
         QSqlQuery query2;
+        QSqlQuery query3;
         query2.exec("SELECT b_id, f_id, flowers.Name, f_ammount FROM consistof JOIN flowers ON f_id = flowers.id WHERE b_id =" + QString::number(currec));
         QString c;
         while(query2.next())
         {
             c += query2.value(2).toString() +  " ( " + query2.value(3).toString() +  " ) ";
+            query3.exec("UPDATE bouqets SET Price = (SELECT sum(f_ammount * flowers.Price) FROM bouqets JOIN consistof ON consistof.b_id = bouqets.id JOIN flowers ON consistof.f_id = flowers.id WHERE b_id = "+query2.value(0).toString() +" GROUP BY consistof.b_id) WHERE bouqets.id = " + query2.value(0).toString());
         }
         QString n = query.value(0).toString();
         QString p = query.value(2).toString();
+
         createNewBouqetWidget(currec-1,n,p, c);
         currec++;
     }
