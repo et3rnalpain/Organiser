@@ -126,24 +126,23 @@ void MainWindow::createBarChartOrders()
         query.previous();
     }
 
-    QBarSeries* series = new QBarSeries();
-    QBarSet** set = new QBarSet*[size];
-    QStringList categories;
-    while (query.next()){
-        set[current_row - 1] = new QBarSet(query.value(0).toString());
-        *set[current_row - 1] << query.value(1).toInt();
-        categories << query.value(0).toString();
-        series->append(set[current_row - 1]);
+    QLineSeries* series = new QLineSeries();
+    QCategoryAxis *axis = new QCategoryAxis();
+
+    while (query.next())
+    {
+        series->append(current_row-1, query.value(1).toInt());
+        axis->append(query.value(0).toString(),current_row-1);
+        current_row++;
     }
 
     QChart* chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("Количество заказов по датам");
 
-    QBarCategoryAxis *axis = new QBarCategoryAxis();
-    axis->append(categories);
+    //axis->append(categories);
     chart->createDefaultAxes();
-    //chart->setAxisX(axis, series);
+    chart->setAxisX(axis, series);
     //chart->setAxisY(axis, categories);
 
     chart->legend()->setVisible(true);
@@ -156,7 +155,7 @@ void MainWindow::createBarChartOrders()
 
     ui->gridLayout_3->addWidget(chartView,1,0);
 
-    delete[] set;
+    //delete[] set;
 }
 
 void MainWindow::createBarChartBouqets()
