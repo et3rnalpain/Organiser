@@ -1297,7 +1297,7 @@ QLineEdit,QComboBox,QSpinBox {background-color: #fafaff; font-size: 12px; color:
                    </spacer>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton_2">
+                   <widget class="QPushButton" name="accept">
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
@@ -1305,7 +1305,7 @@ QLineEdit,QComboBox,QSpinBox {background-color: #fafaff; font-size: 12px; color:
                      </size>
                     </property>
                     <property name="text">
-                     <string>PushButton</string>
+                     <string>Принять</string>
                     </property>
                    </widget>
                   </item>

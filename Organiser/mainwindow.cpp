@@ -531,25 +531,37 @@ void MainWindow::onDelClicked()
         if(s->objectName().at(z).isDigit()) indexwd+= s->objectName().at(z);
     }
     int i = 1;
+    bool flag = false; int j = 2;
     QList<QFrame*> frames = ui->frame_3->findChildren<QFrame*>();
-    foreach(QFrame* frm, frames)
+
+    foreach(QFrame* obj, frames)
     {
-        for(int z = 0; z < frm->objectName().length(); z++)
-        {
-            if(frm->objectName().at(z).isDigit()) indexf+= frm->objectName().at(z);
+        if(j==2){
+            for(int z = 0; z < obj->objectName().length(); z++)
+            {
+                if(obj->objectName().at(z).isDigit()) indexf+= obj->objectName().at(z);
+            }
         }
-        if(indexf == indexwd && qobject_cast<QFrame*>(frm))
+        if(i == indexf.toInt() && j==2)
         {
-        delete frm->findChild<QPushButton*>();
-        delete frm->findChild<QComboBox*>();
-        delete frm->findChild<QSpinBox*>();
-        delete frm;
+            flag = true;
+            delete obj->findChild<QPushButton*>();
+            delete obj->findChild<QComboBox*>();
+            delete obj->findChild<QSpinBox*>();
+            obj->deleteLater();
+            j--;
         }
-        else
+        if(i == indexf.toInt() && flag && j==1)
         {
-            qDebug() << frm;
+            obj->deleteLater();
+            j--;
         }
-        indexf = "";
+        if(i == indexf.toInt() && flag && j==0)
+        {
+            obj->deleteLater();
+            j--;
+            break;
+        }
     }
     i = 1;
     foreach(QFrame* frm, frames)
@@ -565,6 +577,7 @@ void MainWindow::onDelClicked()
             sbox->setObjectName("spinBox" + QString::number(i++));
         }
     }
+
 }
 
 
@@ -572,5 +585,32 @@ void MainWindow::onDelClicked()
 void MainWindow::on_pushButton1_clicked()
 {
     MainWindow::onAddClicked();
+}
+
+
+void MainWindow::on_accept_clicked()
+{
+    QString name = ui->NewBouqetName->text();
+    QSqlQuery query;
+    query.exec("INSERT INTO bouqets (Name) VALUES ('" + name + "')");
+    query.exec("SELECT id FROM bouqets ORDER BY id DESC LIMIT 1"); query.next();
+    int id = query.value(0).toInt();
+    qDebug() << id << "Id букета";
+    int hid = 0, sid = 0;
+    QString f_name,f_ammount = "";
+    QList<QFrame*> frames = ui->frame_3->findChildren<QFrame*>();
+    foreach(QFrame* frm, frames)
+    {
+        foreach(QComboBox* box, frm->findChildren<QComboBox*>()){
+            f_name = box->currentText();
+            query.exec("SELECT id FROM flowers WHERE Name = '"+ f_name+ "'");
+            query.next();
+            hid = query.value(0).toInt();
+        }
+        foreach(QSpinBox* sbox, frm->findChildren<QSpinBox*>()){
+            sid = sbox->text().toInt();
+            query.exec("INSERT INTO consistof (b_id,f_id,f_ammount) VALUES (" + QString::number(id) + "," + QString::number(hid) + "," + QString::number(sid) + ")");
+        }
+    }
 }
 
