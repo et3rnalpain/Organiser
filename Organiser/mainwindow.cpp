@@ -628,3 +628,30 @@ void MainWindow::on_newOrder_clicked()
     }
 }
 
+
+void MainWindow::on_accept_clicked()
+{
+    QString name = ui->NewBouqetName->text();
+    QSqlQuery query;
+    query.exec("INSERT INTO bouqets (Name) VALUES ('" + name + "')");
+    query.exec("SELECT id FROM bouqets ORDER BY id DESC LIMIT 1"); query.next();
+    int id = query.value(0).toInt();
+    qDebug() << id << "Id букета";
+    int hid = 0, sid = 0;
+    QString f_name,f_ammount = "";
+    QList<QFrame*> frames = ui->frame_3->findChildren<QFrame*>();
+    foreach(QFrame* frm, frames)
+    {
+        foreach(QComboBox* box, frm->findChildren<QComboBox*>()){
+            f_name = box->currentText();
+            query.exec("SELECT id FROM flowers WHERE Name = '"+ f_name+ "'");
+            query.next();
+            hid = query.value(0).toInt();
+        }
+        foreach(QSpinBox* sbox, frm->findChildren<QSpinBox*>()){
+            sid = sbox->text().toInt();
+            query.exec("INSERT INTO consistof (b_id,f_id,f_ammount) VALUES (" + QString::number(id) + "," + QString::number(hid) + "," + QString::number(sid) + ")");
+        }
+    }
+}
+

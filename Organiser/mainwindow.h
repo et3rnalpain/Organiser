@@ -88,6 +88,8 @@ private slots:
 
     void on_newOrder_clicked();
 
+    void on_accept_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
