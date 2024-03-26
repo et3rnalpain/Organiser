@@ -224,7 +224,7 @@ void MainWindow::createBarChartOrders()
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
     chartView->setVisible(true);
-    chartView->setMinimumSize(1000,400);
+    chartView->setMinimumSize(150,150);
 
     ui->gridLayout_3->addWidget(chartView,1,0);
 }
@@ -270,7 +270,7 @@ void MainWindow::createBarChartBouqets()
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
     chartView->setVisible(true);
-    chartView->setMinimumSize(400,400);
+    chartView->setMinimumSize(150,150);
 
     ui->gridLayout_3->addWidget(chartView,0,0);
 
@@ -328,7 +328,7 @@ void MainWindow::createPieChart()
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
 
-    chartView->setMinimumSize(400,400);
+    chartView->setMinimumSize(150,150);
 
     ui->gridLayout_3->addWidget(chartView,0,1);
 }
@@ -728,7 +728,6 @@ void MainWindow::updateStats()
     {
         obj->deleteLater();
     }
-
     createPieChart();
     createBarChartBouqets();
     createBarChartOrders();
