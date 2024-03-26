@@ -43,6 +43,7 @@ public:
     void createNewBouqetWidget(int rowNum, QString flname, QString flprice, QString consist);
     void createNewClientWidget(int rowNum, QString s_name, QString f_name, QString m_name, QString sex, QString age);
     void createNewOrderWidget(int rowNum,QString id_, QString data, QString b_name, QString client_fio, QString price);
+    void updateBouqets();
     void createPieChart();
     void createBarChartBouqets();
     void createBarChartOrders();

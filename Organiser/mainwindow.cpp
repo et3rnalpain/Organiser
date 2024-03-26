@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     QSqlQuery query;
     query.exec("SELECT bouqets.Name, consistof.b_id, sum(f_ammount * flowers.Price) FROM bouqets JOIN consistof ON consistof.b_id = bouqets.id JOIN flowers ON consistof.f_id = flowers.id GROUP BY consistof.b_id");
+
     int currec = 1;
 
     while(query.next())
@@ -423,12 +424,14 @@ void MainWindow::on_inventory_clicked()
 {
     model->select();
     ui->contentWidget->setCurrentIndex(1);
+
 }
 
 
 void MainWindow::on_flowers_clicked()
 {
     ui->contentWidget->setCurrentIndex(0);
+    updateBouqets();
 }
 
 
@@ -456,6 +459,7 @@ void MainWindow::on_inventory_2_clicked()
 void MainWindow::on_flowers_2_clicked()
 {
     ui->contentWidget->setCurrentIndex(0);
+    updateBouqets();
 }
 
 
@@ -636,7 +640,6 @@ void MainWindow::on_accept_clicked()
     query.exec("INSERT INTO bouqets (Name) VALUES ('" + name + "')");
     query.exec("SELECT id FROM bouqets ORDER BY id DESC LIMIT 1"); query.next();
     int id = query.value(0).toInt();
-    qDebug() << id << "Id букета";
     int hid = 0, sid = 0;
     QString f_name,f_ammount = "";
     QList<QFrame*> frames = ui->frame_3->findChildren<QFrame*>();
@@ -652,6 +655,42 @@ void MainWindow::on_accept_clicked()
             sid = sbox->text().toInt();
             query.exec("INSERT INTO consistof (b_id,f_id,f_ammount) VALUES (" + QString::number(id) + "," + QString::number(hid) + "," + QString::number(sid) + ")");
         }
+    }
+    updateBouqets();
+}
+
+void MainWindow::updateBouqets()
+{
+    QList<QFrame*> objects = ui->scrollArea->findChildren<QFrame*>();
+    foreach(QFrame* obj, objects)
+    {
+        if(obj->objectName().contains("bouqet"))
+        {
+            obj->deleteLater();
+        }
+    }
+
+    QSqlQuery query;
+    query.exec("SELECT bouqets.Name, consistof.b_id, sum(f_ammount * flowers.Price) FROM bouqets JOIN consistof ON consistof.b_id = bouqets.id JOIN flowers ON consistof.f_id = flowers.id GROUP BY consistof.b_id");
+
+    int currec = 1;
+
+    while(query.next())
+    {
+        QSqlQuery query2;
+        QSqlQuery query3;
+        query2.exec("SELECT b_id, f_id, flowers.Name, f_ammount FROM consistof JOIN flowers ON f_id = flowers.id WHERE b_id =" + QString::number(currec));
+        QString c;
+        while(query2.next())
+        {
+            c += query2.value(2).toString() +  " ( " + query2.value(3).toString() +  " ) ";
+            query3.exec("UPDATE bouqets SET Price = (SELECT sum(f_ammount * flowers.Price) FROM bouqets JOIN consistof ON consistof.b_id = bouqets.id JOIN flowers ON consistof.f_id = flowers.id WHERE b_id = "+query2.value(0).toString() +" GROUP BY consistof.b_id) WHERE bouqets.id = " + query2.value(0).toString());
+        }
+        QString n = query.value(0).toString();
+        QString p = query.value(2).toString();
+
+        createNewBouqetWidget(currec-1,n,p, c);
+        currec++;
     }
 }
 
