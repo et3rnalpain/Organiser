@@ -83,6 +83,8 @@ MainWindow::MainWindow(QWidget *parent)
     query.exec("SELECT bouqets.Name FROM bouqets");
     while (query.next())
         ui->comboBox_bouqete->addItem(query.value(0).toString());
+    ui->comboBox_sex->addItem("муж");
+    ui->comboBox_sex->addItem("жен");
 }
 
 MainWindow::~MainWindow()
@@ -572,5 +574,57 @@ void MainWindow::onDelClicked()
 void MainWindow::on_pushButton1_clicked()
 {
     MainWindow::onAddClicked();
+}
+
+
+void MainWindow::on_newOrder_clicked()
+{
+    if (ui->lineEdit->text() == "Фамилия" || ui->lineEdit->text() == "" ||
+        ui->lineEdit_2->text() == "Имя" || ui->lineEdit_2->text() == "" ||
+        ui->lineEdit_3->text() == "Отчество" || ui->lineEdit_3->text() == ""
+       )
+        QMessageBox::about(this, "Error", "Errorrr");
+    else
+    {
+        QSqlQuery query;
+
+        QString last_n, first_n, mid_n, sex_, b_date;
+        last_n = ui->lineEdit->text();
+        first_n = ui->lineEdit_2->text();
+        mid_n = ui->lineEdit_3->text();
+        sex_ = ui->comboBox_sex->currentText();
+        b_date = ui->dateEdit->text();
+
+        bool inTable = false;
+        query.exec("SELECT clients.LastName, clients.FirstName, clients.MiddleName, clients.Sex, clients.BirthDate FROM clients");
+        while(query.next()){
+            if (last_n == query.value(0).toString() &&
+                first_n == query.value(1).toString() &&
+                mid_n == query.value(2).toString() &&
+                sex_ == query.value(3).toString() &&
+                b_date == query.value(4).toString()
+                )
+            {
+                inTable = true;
+                QMessageBox::about(this, "Error", "Уже есть такой в таблице клиентик" + query.value(4).toString() + ui->dateEdit->text());
+            }
+        }
+
+        if(!inTable){
+            query.exec("INSERT INTO clients (LastName, FirstName, MiddleName, Sex, BirthDate) VALUES ('" + last_n +"','" + first_n +"','" + mid_n + "','" + sex_ +"','" + b_date + "')");
+            inTable = true;
+        }
+
+        int client_id, bouqete_id;
+        //query.exec("SELECT clients.id FROM clients WHERE clients.FirstName = '" + first_n +"' AND clients.LastName = '" + last_n + "' AND clients.MiddleName = '" + mid_n +"' AND clients.BirthDate = '" + b_date + "' AND clients.Sex = '" + sex_ + "'ORDER BY id DESC LIMIT 1");
+        query.exec("SELECT clients.id FROM clients ORDER BY id DESC LIMIT 1");
+        query.next();
+        client_id = query.value(0).toInt();
+        query.exec("SELECT bouqets.id FROM bouqets WHERE bouqets.Name = '" + ui->comboBox_bouqete->currentText() + "'");
+        query.next();
+        bouqete_id = query.value(0).toInt();
+
+        query.exec("INSERT INTO orders (client_id, bouquete_id, date) VALUES ('" + QString::number(client_id) + "','" + QString::number(bouqete_id) +"','" + ui->dateEdit_2->text() + "')");
+    }
 }
 

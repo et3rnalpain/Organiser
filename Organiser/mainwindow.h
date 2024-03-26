@@ -25,6 +25,8 @@
 
 #include <QLabel>
 
+#include <QMessageBox>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -83,6 +85,8 @@ private slots:
     void onDelClicked();
 
     void on_pushButton1_clicked();
+
+    void on_newOrder_clicked();
 
 private:
     Ui::MainWindow *ui;
