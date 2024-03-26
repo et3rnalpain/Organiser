@@ -1304,6 +1304,15 @@ QLineEdit,QComboBox,QSpinBox {background-color: #fafaff; font-size: 12px; color:
                       <height>20</height>
                      </size>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>Bahnschrift</family>
+                      <pointsize>-1</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: #fafaff; font-size: 12px; color: #30343f; border-radius: 2px;</string>
+                    </property>
                     <property name="text">
                      <string>Принять</string>
                     </property>
@@ -1356,34 +1365,6 @@ color:#fafaff;
                </property>
                <property name="text">
                 <string>Добавить</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_4">
-               <property name="minimumSize">
-                <size>
-                 <width>100</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Bahnschrift</family>
-                 <pointsize>13</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton
-{
-float: center;
-border: 0;
-background: #30343f;
-color:#fafaff;
-}</string>
-               </property>
-               <property name="text">
-                <string>Удалить</string>
                </property>
               </widget>
              </item>
