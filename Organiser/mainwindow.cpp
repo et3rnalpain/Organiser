@@ -62,7 +62,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     query.exec("SELECT orders.id, orders.date, bouqets.Name, clients.LastName, bouqets.Price, clients.FirstName, clients.MiddleName FROM orders JOIN bouqets ON bouqets.id = orders.bouquete_id JOIN clients ON clients.id = orders.client_id");
-    currec = 1;
+    int current_row_order = 1;
 
     while(query.next())
     {
@@ -72,8 +72,8 @@ MainWindow::MainWindow(QWidget *parent)
         QString fio_ = query.value(3).toString() + " " + query.value(5).toString()[0] + ". " + query.value(6).toString()[0] + ".";
         QString price_ = "Цена: " + query.value(4).toString() + "₽";
 
-        createNewOrderWidget(currec-1, id_, date_, b_name, fio_, price_);
-        currec++;
+        createNewOrderWidget(current_row_order-1, id_, date_, b_name, fio_, price_);
+        current_row_order++;
     }
 
     QSqlQuery q;q.exec("SELECT Name FROM flowers");
