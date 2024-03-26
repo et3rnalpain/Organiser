@@ -1071,7 +1071,7 @@ padding-top: 1px;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="Sklad">
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1514,8 +1514,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>65</width>
-                <height>28</height>
+                <width>706</width>
+                <height>582</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1547,8 +1547,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>63</width>
-                <height>28</height>
+                <width>704</width>
+                <height>580</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">

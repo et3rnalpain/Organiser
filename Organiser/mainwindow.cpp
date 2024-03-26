@@ -443,10 +443,8 @@ void MainWindow::on_clients_clicked()
 
 void MainWindow::on_stats_clicked()
 {
-    createPieChart();
-    createBarChartBouqets();
-    createBarChartOrders();
     ui->contentWidget->setCurrentIndex(3);
+    updateStats();
 }
 
 
@@ -471,10 +469,8 @@ void MainWindow::on_clients_2_clicked()
 
 void MainWindow::on_stats_2_clicked()
 {
-    createPieChart();
-    createBarChartBouqets();
-    createBarChartOrders();
     ui->contentWidget->setCurrentIndex(3);
+    updateStats();
 }
 
 
@@ -629,6 +625,8 @@ void MainWindow::on_newOrder_clicked()
         bouqete_id = query.value(0).toInt();
 
         query.exec("INSERT INTO orders (client_id, bouquete_id, date) VALUES ('" + QString::number(client_id) + "','" + QString::number(bouqete_id) +"','" + ui->dateEdit_2->text() + "')");
+
+        updateOrders();
     }
 }
 
@@ -692,5 +690,46 @@ void MainWindow::updateBouqets()
         createNewBouqetWidget(currec-1,n,p, c);
         currec++;
     }
+}
+
+void MainWindow::updateOrders()
+{
+    QList<QFrame*> objects = ui->scrollArea_4->findChildren<QFrame*>();
+    foreach(QFrame* obj, objects)
+    {
+        if(obj->objectName().contains("order"))
+        {
+            obj->deleteLater();
+        }
+    }
+
+    QSqlQuery query;
+    query.exec("SELECT orders.id, orders.date, bouqets.Name, clients.LastName, bouqets.Price, clients.FirstName, clients.MiddleName FROM orders JOIN bouqets ON bouqets.id = orders.bouquete_id JOIN clients ON clients.id = orders.client_id");
+    int current_row_order = 1;
+
+    while(query.next())
+    {
+        QString id_ = "Заказ ID: " + query.value(0).toString();
+        QString date_ = "Когда: " + query.value(1).toString();
+        QString b_name = "Букет: " + query.value(2).toString();
+        QString fio_ = query.value(3).toString() + " " + query.value(5).toString()[0] + ". " + query.value(6).toString()[0] + ".";
+        QString price_ = "Цена: " + query.value(4).toString() + "₽";
+
+        createNewOrderWidget(current_row_order-1, id_, date_, b_name, fio_, price_);
+        current_row_order++;
+    }
+}
+
+void MainWindow::updateStats()
+{
+    QList<QFrame*> objects = ui->scrollArea_3->findChildren<QFrame*>();
+    foreach(QFrame* obj, objects)
+    {
+        obj->deleteLater();
+    }
+
+    createPieChart();
+    createBarChartBouqets();
+    createBarChartOrders();
 }
 

@@ -49,6 +49,7 @@ public:
     void createBarChartOrders();
     void createNewFlowerBouqetConnection(int i);
     void updateOrders();
+    void updateStats();
 
 private slots:
 
