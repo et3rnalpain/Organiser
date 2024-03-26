@@ -1071,7 +1071,7 @@ padding-top: 1px;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="Sklad">
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1088,8 +1088,8 @@ padding-top: 1px;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>420</width>
-                <height>74</height>
+                <width>706</width>
+                <height>554</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="bouqetContentLayout">
