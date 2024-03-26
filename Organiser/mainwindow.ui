@@ -1071,7 +1071,7 @@ padding-top: 1px;
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="page_4">
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1088,8 +1088,8 @@ padding-top: 1px;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>706</width>
-                <height>554</height>
+                <width>65</width>
+                <height>18</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="bouqetContentLayout">
@@ -1311,8 +1311,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>706</width>
-                <height>582</height>
+                <width>65</width>
+                <height>28</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1344,8 +1344,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>704</width>
-                <height>580</height>
+                <width>63</width>
+                <height>28</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
@@ -1366,8 +1366,8 @@ color:#fafaff;
           </layout>
          </widget>
          <widget class="QWidget" name="page_5">
-          <layout class="QGridLayout" name="gridLayout_8">
-           <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
             <widget class="QScrollArea" name="scrollArea_4">
              <property name="widgetResizable">
               <bool>true</bool>
@@ -1377,8 +1377,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>63</width>
-                <height>20</height>
+                <width>704</width>
+                <height>474</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_5">
@@ -1387,6 +1387,62 @@ color:#fafaff;
                </item>
               </layout>
              </widget>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="lineEdit_2">
+                <property name="inputMask">
+                 <string>Имя</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEdit">
+                <property name="inputMask">
+                 <string>Фамилия</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLineEdit" name="lineEdit_3">
+                <property name="inputMask">
+                 <string>Отчество</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QComboBox" name="comboBox_bouqete">
+                <property name="editable">
+                 <bool>true</bool>
+                </property>
+                <property name="currentText">
+                 <string>Выберите букет</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2" colspan="2">
+               <widget class="QPushButton" name="newOrder">
+                <property name="text">
+                 <string>Новый заказ</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
           </layout>

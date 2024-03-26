@@ -73,9 +73,10 @@ MainWindow::MainWindow(QWidget *parent)
         createNewOrderWidget(currec-1, id_, date_, b_name, fio_, price_);
         currec++;
     }
-    createPieChart();
-    createBarChartBouqets();
-    createBarChartOrders();
+
+    query.exec("SELECT bouqets.Name FROM bouqets");
+    while (query.next())
+        ui->comboBox_bouqete->addItem(query.value(0).toString());
 }
 
 MainWindow::~MainWindow()
@@ -393,6 +394,9 @@ void MainWindow::on_clients_clicked()
 
 void MainWindow::on_stats_clicked()
 {
+    createPieChart();
+    createBarChartBouqets();
+    createBarChartOrders();
     ui->contentWidget->setCurrentIndex(3);
 }
 
@@ -417,6 +421,9 @@ void MainWindow::on_clients_2_clicked()
 
 void MainWindow::on_stats_2_clicked()
 {
+    createPieChart();
+    createBarChartBouqets();
+    createBarChartOrders();
     ui->contentWidget->setCurrentIndex(3);
 }
 
