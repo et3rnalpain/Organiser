@@ -75,11 +75,10 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     QSqlQuery q;q.exec("SELECT Name FROM flowers");
-    while(q.next()) ui->flowersComboBox->addItem(q.value(0).toString());
+    while(q.next()) ui->flowersComboBox1->addItem(q.value(0).toString());
     createPieChart();
     createBarChartBouqets();
     createBarChartOrders();
-    createNewFlowerBouqetConnection();
 }
 
 MainWindow::~MainWindow()
@@ -362,16 +361,19 @@ void MainWindow::createNewBouqetWidget(int rowNum, QString flname, QString flpri
     ui->bouqetContentLayout->insertWidget(rowNum,frame,0,Qt::AlignTop);
 }
 
-void MainWindow::createNewFlowerBouqetConnection()
+void MainWindow::createNewFlowerBouqetConnection(int i)
 {
     QFrame* exmpl = new QFrame(ui->frame_3);
-    exmpl->setObjectName("exmpl");
+    exmpl->setObjectName("exmpl" + QString::number(i));
     exmpl->setFrameShape(QFrame::StyledPanel);
     exmpl->setFrameShadow(QFrame::Raised);
     QHBoxLayout* el = new QHBoxLayout(exmpl);
     el->setObjectName("el");
-    QComboBox* comboBox = new QComboBox(exmpl);
-    comboBox->setObjectName("flowersComboBox");
+    el->setSpacing(3);
+    el->setContentsMargins(0, 0, 0, 0);
+
+    QComboBox* comboBox = new QComboBox();
+    comboBox->setObjectName("flowersComboBox" + QString::number(i));
     comboBox->setMinimumSize(QSize(100, 20));
     comboBox->setMaximumSize(QSize(16777215, 20));
     comboBox->setFont(QFont(QString::fromUtf8("Bahnschrift")));
@@ -379,21 +381,22 @@ void MainWindow::createNewFlowerBouqetConnection()
     while(query.next()) comboBox->addItem(query.value(0).toString());
     el->addWidget(comboBox);
 
-    QSpinBox* spinBox = new QSpinBox(exmpl);
-    spinBox->setObjectName("spinBox");
+    QSpinBox* spinBox = new QSpinBox();
+    spinBox->setObjectName("spinBox" + QString::number(i));
     spinBox->setMinimumSize(QSize(50, 20));
     spinBox->setFont(QFont(QString::fromUtf8("Bahnschrift")));
     spinBox->setMinimum(1);
     el->addWidget(spinBox);
 
-    QPushButton* pb = new QPushButton(exmpl);
-    pb->setObjectName("pushButton");
-    pb->setMinimumSize(QSize(0, 0));
+    QPushButton* pb = new QPushButton();
+    pb->setObjectName("pushButton" + QString::number(i));
+    pb->setMinimumSize(QSize(20, 20));
     pb->setMaximumSize(QSize(20, 20));
+    pb->setText("+");
     connect(pb,&QPushButton::clicked,this,&MainWindow::onAddClicked);
-
+    comboBox->setStyleSheet("background-color: #fafaff; font-size: 12px; color: #30343f; border-radius: 2px;");
+    spinBox->setStyleSheet("background-color: #fafaff; font-size: 12px; color: #30343f; border-radius: 2px;");
     el->addWidget(pb);
-
 
     ui->addF->addWidget(exmpl);
 }
@@ -490,7 +493,74 @@ void MainWindow::on_orders_2_clicked()
 
 void MainWindow::onAddClicked()
 {
-    createNewFlowerBouqetConnection();
+    int i = 1;
+    QList<QFrame*> frames = ui->frame_3->findChildren<QFrame*>();
+    foreach (QFrame* frms, frames ) {
+        foreach(QPushButton* obj, frms->findChildren<QPushButton*>())
+        {
+            if(frms->findChild<QPushButton*>())
+            {
+                frms->findChild<QPushButton*>()->setText("-");
+                disconnect(frms->findChild<QPushButton*>(),0,0,0);
+                connect(frms->findChild<QPushButton*>(),&QPushButton::clicked,this,&MainWindow::onDelClicked);
+                obj->objectName() = "pushButton"+QString::number(i);
+                i++;
+            }
+        }
+    }
+    createNewFlowerBouqetConnection(i);
 }
 
+void MainWindow::onDelClicked()
+{
+    QObject* s = sender();
+    QString indexwd = "";
+    QString indexf = "";
+    for(int z = 0; z < s->objectName().length(); z++)
+    {
+        if(s->objectName().at(z).isDigit()) indexwd+= s->objectName().at(z);
+    }
+    int i = 1;
+    QList<QFrame*> frames = ui->frame_3->findChildren<QFrame*>();
+    foreach(QFrame* frm, frames)
+    {
+        for(int z = 0; z < frm->objectName().length(); z++)
+        {
+            if(frm->objectName().at(z).isDigit()) indexf+= frm->objectName().at(z);
+        }
+        if(indexf == indexwd && qobject_cast<QFrame*>(frm))
+        {
+        delete frm->findChild<QPushButton*>();
+        delete frm->findChild<QComboBox*>();
+        delete frm->findChild<QSpinBox*>();
+        delete frm;
+        }
+        else
+        {
+            qDebug() << frm;
+        }
+        indexf = "";
+    }
+    i = 1;
+    foreach(QFrame* frm, frames)
+    {
+        frm->setObjectName("exmpl" + QString::number(i));
+        foreach(QPushButton* btn, frm->findChildren<QPushButton*>()){
+            btn->setObjectName("pushButton" + QString::number(i));
+        }
+        foreach(QComboBox* box, frm->findChildren<QComboBox*>()){
+            box->setObjectName("comboBox" + QString::number(i));
+        }
+        foreach(QSpinBox* sbox, frm->findChildren<QSpinBox*>()){
+            sbox->setObjectName("spinBox" + QString::number(i++));
+        }
+    }
+}
+
+
+
+void MainWindow::on_pushButton1_clicked()
+{
+    MainWindow::onAddClicked();
+}
 

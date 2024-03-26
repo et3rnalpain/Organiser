@@ -1173,7 +1173,7 @@ QLineEdit,QComboBox,QSpinBox {background-color: #fafaff; font-size: 12px; color:
                       <number>0</number>
                      </property>
                      <item>
-                      <widget class="QFrame" name="exmpl">
+                      <widget class="QFrame" name="exmpl1">
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
                        </property>
@@ -1181,8 +1181,23 @@ QLineEdit,QComboBox,QSpinBox {background-color: #fafaff; font-size: 12px; color:
                         <enum>QFrame::Raised</enum>
                        </property>
                        <layout class="QHBoxLayout" name="exmplLayout">
+                        <property name="spacing">
+                         <number>3</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item>
-                         <widget class="QComboBox" name="flowersComboBox">
+                         <widget class="QComboBox" name="flowersComboBox1">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                             <horstretch>0</horstretch>
@@ -1238,7 +1253,7 @@ QLineEdit,QComboBox,QSpinBox {background-color: #fafaff; font-size: 12px; color:
                          </widget>
                         </item>
                         <item>
-                         <widget class="QPushButton" name="pushButton">
+                         <widget class="QPushButton" name="pushButton1">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                             <horstretch>0</horstretch>
@@ -1499,8 +1514,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>706</width>
-                <height>582</height>
+                <width>65</width>
+                <height>28</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1532,8 +1547,8 @@ color:#fafaff;
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>704</width>
-                <height>580</height>
+                <width>63</width>
+                <height>28</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
