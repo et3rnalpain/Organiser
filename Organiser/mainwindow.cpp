@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->fullmenu->setVisible(false);
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("./../../Organiser/Organiser/db/flowers.db");
+    db.setDatabaseName("./db/flowers.db");
     if(db.open())
     {
         model = new QSqlTableModel(this,db);
